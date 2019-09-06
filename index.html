@@ -39,18 +39,19 @@
 		.line {
 			fill: none;
 			stroke: #424242;
-			stroke-width: 10;
 			stroke-linecap: round;
-			transition: 1.2s;
+			transition: stroke-dashoffset 1.2s;
 		}
 
 		.line{
 			stroke-dasharray: 100;
 			stroke-dashoffset: 100;
+			stroke-width: 5;
 		}
 		.curve {
 			stroke-dasharray: 0 100 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5;
 			stroke-dashoffset: 0;
+			stroke-width: 10;
 		}
 
 		.curve.growLine{
@@ -638,7 +639,8 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 
 		/*  
 			Relier par une courbe ou une ligne deux éléments HTML.
-			Limite : ne pas mettre en position (fixed, absolute) les éléments parents.
+			Gère le redimentionnement de pages.
+			PathLength à 100.
 
 			HTML : 
 				<svg class=svgLines></svg>
@@ -659,12 +661,11 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 				new CurveSVG(
 					{
 						"from": ".depart", 	// élément de depart de la courbe(le centre)
-						"to": ".arrivee", // élément d'arrivée de la courbe (le centre)
+						"to": ".arrivee", 	// élément d'arrivée de la courbe (le centre)
 						"style": "curve", 	// style (class) à appliquer
 						"shape": "curveY" 	// type : line (défaut), curveX, curveY
-						"data":{
-							"class": "growLine", // données à ajouter à data-*
-							...
+						"attributes": {		// Attributs à ajouter au path (permet d'utiliser addClass() par exemple pour des effets comme faire apparaître la courbe)
+							"data-class": "growLine" 
 						}
 					}
 				);
@@ -688,6 +689,16 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 
 					document.querySelector(".svgLines").appendChild(this.line);
 					window.addEventListener("resize", () => { this.setPositionLine() });
+
+					var observer = new MutationObserver(()=>{
+						this.mutation();
+						this.setPositionLine();
+					});
+					observer.observe(this.to.parentElement, { attributes: true, childList: true });
+					
+				}
+				mutation(){
+					console.log("Mutation"+this);
 				}
 				setPositionLine() {
 					let fromOffset = this.getOffset(this.from);
@@ -712,18 +723,9 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 					`);
 				}
 				getOffset(e){
-					let offsetLeft = e.offsetLeft;
-					let offsetTop = e.offsetTop;
-					let nextParent = e.offsetParent;
-					while(nextParent){
-						offsetTop += nextParent.offsetTop;
-						offsetLeft += nextParent.offsetLeft;
-						nextParent = nextParent.offsetParent;
-						console.log(nextParent);
-					}
 					return {
-						"left": offsetLeft,
-						"top": offsetTop
+						"left": e.getBoundingClientRect().left + window.scrollX,
+						"top": e.getBoundingClientRect().top + window.scrollY
 					}
 				}
 			}
