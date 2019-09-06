@@ -40,18 +40,19 @@
 			fill: none;
 			stroke: #424242;
 			stroke-linecap: round;
-			transition: stroke-dashoffset 1.2s;
 		}
 
 		.line{
 			stroke-dasharray: 100;
 			stroke-dashoffset: 100;
 			stroke-width: 5;
+			transition: stroke-dashoffset 1.2s;
 		}
 		.curve {
 			stroke-dasharray: 0 100 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5;
 			stroke-dashoffset: 0;
 			stroke-width: 10;
+			transition: stroke-dashoffset 0.6s;
 		}
 
 		.curve.growLine{
@@ -660,11 +661,15 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 			JS :
 				new CurveSVG(
 					{
-						"from": ".depart", 	// élément de depart de la courbe(le centre)
-						"to": ".arrivee", 	// élément d'arrivée de la courbe (le centre)
-						"style": "curve", 	// style (class) à appliquer
-						"shape": "curveY" 	// type : line (défaut), curveX, curveY
-						"attributes": {		// Attributs à ajouter au path (permet d'utiliser addClass() par exemple pour des effets comme faire apparaître la courbe)
+						from: ".depart", 	// élément de depart de la courbe(le centre)
+						to: ".arrivee", 	// élément d'arrivée de la courbe (le centre)
+						style: "curve", 	// (option) style (class) à appliquer
+						shape: "curveY" 	// (option) type : line (défaut), curveX, curveY
+						observe: [		// (option) éléments à observer pour redessiner la courbe
+							".arrivee", 
+							...
+						],
+						attributes: {		// (option) Attributs à ajouter au path (permet d'utiliser addClass() par exemple pour des effets comme faire apparaître la courbe)
 							"data-class": "growLine" 
 						}
 					}
@@ -690,15 +695,15 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 					document.querySelector(".svgLines").appendChild(this.line);
 					window.addEventListener("resize", () => { this.setPositionLine() });
 
-					var observer = new MutationObserver(()=>{
-						this.mutation();
-						this.setPositionLine();
-					});
-					observer.observe(this.to.parentElement, { attributes: true, childList: true });
+					if(data.observe){
+						var observer = new MutationObserver(()=>{
+							this.setPositionLine();
+						});
+						data.observe.forEach((e)=>{
+							observer.observe( document.querySelector(e), { attributes: true });
+						});
+					}	
 					
-				}
-				mutation(){
-					console.log("Mutation"+this);
 				}
 				setPositionLine() {
 					let fromOffset = this.getOffset(this.from);
@@ -732,11 +737,11 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 
 			new CurveSVG(
 				{
-					"from": ".accueil .boule",
-					"to": "#formation .boule",
-					"style": "curve",
-					"shape": "curveY",
-					"attributes": {
+					from: ".accueil .boule",
+					to: "#formation .boule",
+					style: "curve",
+					shape: "curveY",
+					attributes: {
 						"data-class": "growLine"
 					}
 				}
@@ -744,10 +749,13 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 
 			new CurveSVG(
 				{
-					"from": ".depart .barre:nth-child(1)",
-					"to": ".quinconce>div:nth-child(1)>div",
-					"style": "line",
-					"attributes": {
+					from: ".depart .barre:nth-child(1)",
+					to: ".quinconce>div:nth-child(1)>div",
+					style: "line",
+					observe:[
+						".quinconce>div:nth-child(1)"
+					],
+					attributes: {
 						"data-class": "growLine",
 						"data-delay": "0"
 					}
@@ -755,10 +763,13 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 			);
 			new CurveSVG(
 				{
-					"from": ".depart .barre:nth-child(2)",
-					"to": ".quinconce>div:nth-child(2)>div",
-					"style": "line",
-					"attributes": {
+					from: ".depart .barre:nth-child(2)",
+					to: ".quinconce>div:nth-child(2)>div",
+					style: "line",
+					observe:[
+						".quinconce>div:nth-child(2)"
+					],
+					attributes: {
 						"data-class": "growLine",
 						"data-delay": "200"
 					}
@@ -766,10 +777,13 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 			);
 			new CurveSVG(
 				{
-					"from": ".depart .barre:nth-child(3)",
-					"to": ".quinconce>div:nth-child(3)>div",
-					"style": "line",
-					"attributes": {
+					from: ".depart .barre:nth-child(3)",
+					to: ".quinconce>div:nth-child(3)>div",
+					style: "line",
+					observe:[
+						".quinconce>div:nth-child(3)"
+					],
+					attributes: {
 						"data-class": "growLine",
 						"data-delay": "400"
 					}
@@ -777,10 +791,13 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 			);
 			new CurveSVG(
 				{
-					"from": ".depart .barre:nth-child(4)",
-					"to": ".quinconce>div:nth-child(4)>div",
-					"style": "line",
-					"attributes": {
+					from: ".depart .barre:nth-child(4)",
+					to: ".quinconce>div:nth-child(4)>div",
+					style: "line",
+					observe:[
+						".quinconce>div:nth-child(4)"
+					],
+					attributes: {
 						"data-class": "growLine",
 						"data-delay": "600"
 					}
@@ -846,6 +863,8 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 		window.addEventListener("scroll", parallax, { passive: true });
 		parallax();
 
+
+		window.addEventListener("scroll", function(){console.log("scroll")})
 	</script>
 </body>
 
