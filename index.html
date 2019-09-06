@@ -697,7 +697,7 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 
 					if(data.observe){
 						var observer = new MutationObserver(()=>{
-							this.setPositionLine();
+							setTimeout(()=>{this.setPositionLine()},100);
 						});
 						data.observe.forEach((e)=>{
 							observer.observe( document.querySelector(e), { attributes: true });
@@ -862,9 +862,6 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 		}
 		window.addEventListener("scroll", parallax, { passive: true });
 		parallax();
-
-
-		window.addEventListener("scroll", function(){console.log("scroll")})
 	</script>
 </body>
 
