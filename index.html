@@ -258,7 +258,7 @@
 			border: 1px solid #BBB;
 			box-shadow: 0 0 0px #BBB;
 			animation: pioupiou 0.4s alternate infinite;
-			transition: 0.2s;
+			transition: background 0.2s;
 		}
 
 		.quinconce>div:hover {
@@ -697,7 +697,7 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 
 					if(data.observe){
 						var observer = new MutationObserver(()=>{
-							setTimeout(()=>{this.setPositionLine()},100);
+							this.setPositionLine();
 						});
 						data.observe.forEach((e)=>{
 							observer.observe( document.querySelector(e), { attributes: true });
