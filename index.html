@@ -42,24 +42,19 @@
 			stroke-linecap: round;
 		}
 
-		.line{
+		.line {
 			stroke-dasharray: 100;
 			stroke-dashoffset: 100;
 			stroke-width: 5;
 			transition: stroke-dashoffset 1.2s;
 		}
+
 		.curve {
 			stroke-dasharray: 0 100 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5;
-			stroke-dashoffset: 0;
 			stroke-width: 10;
-			transition: stroke-dashoffset 0.6s;
 		}
 
-		.curve.growLine{
-			stroke-dashoffset: -100;
-		}
-
-		.line.growLine{
+		.line.growLine {
 			stroke-dashoffset: 0;
 		}
 
@@ -558,7 +553,7 @@ img/communication/communication_go9ro1_c_scale,w_446.jpg 446w,
 img/communication/communication_go9ro1_c_scale,w_548.jpg 548w,
 img/communication/communication_go9ro1_c_scale,w_634.jpg 634w,
 img/communication/communication_go9ro1_c_scale,w_680.jpg 680w"
-data-lazy-src="img/communication/communication_go9ro1_c_scale,w_680.jpg" alt="Communication">
+					data-lazy-src="img/communication/communication_go9ro1_c_scale,w_680.jpg" alt="Communication">
 			</div>
 			<div data-speed="-0.1">
 				<div class="point"></div>Infographies et mises en page
@@ -675,141 +670,137 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 					}
 				);
 		*/
-		window.addEventListener("load", function () {
-			class CurveSVG {
-				constructor(data) {
-					this.from = document.querySelector(data.from);
-					this.to = document.querySelector(data.to);
-					this.shape = data.shape || "line";
+		//window.addEventListener("load", function () {
+		class CurveSVG {
+			constructor(data) {
+				this.from = document.querySelector(data.from);
+				this.to = document.querySelector(data.to);
+				this.shape = data.shape || "line";
 
-					this.line = document.createElementNS("http://www.w3.org/2000/svg", "path");
-					this.line.setAttribute("pathLength", 100);
-					this.line.setAttribute("class", data.style);
+				this.line = document.createElementNS("http://www.w3.org/2000/svg", "path");
+				this.line.setAttribute("pathLength", 100);
+				this.line.setAttribute("class", data.style);
 
-					for(const key in data.attributes){
-						this.line.setAttribute(key, data.attributes[key]);
-					};
+				for (const key in data.attributes) {
+					this.line.setAttribute(key, data.attributes[key]);
+				};
 
-					this.setPositionLine();
+				this.setPositionLine();
 
-					document.querySelector(".svgLines").appendChild(this.line);
-					window.addEventListener("resize", () => { this.setPositionLine() });
+				document.querySelector(".svgLines").appendChild(this.line);
+				window.addEventListener("resize", () => { this.setPositionLine() });
 
-					if(data.observe){
-						var observer = new MutationObserver(()=>{
-							this.setPositionLine();
-						});
-						data.observe.forEach((e)=>{
-							observer.observe( document.querySelector(e), { attributes: true });
-						});
-					}	
-					
+				if (data.observe) {
+					var observer = new MutationObserver(() => {
+						this.setPositionLine();
+					});
+					data.observe.forEach((e) => {
+						observer.observe(document.querySelector(e), { attributes: true });
+					});
 				}
-				setPositionLine() {
-					let fromOffset = this.getOffset(this.from);
-					let toOffset = this.getOffset(this.to);
-					let fromX = fromOffset.left + this.from.offsetWidth / 2;
-					let fromY = fromOffset.top + this.from.offsetHeight / 2;
-					let toX = toOffset.left + this.to.offsetWidth / 2;
-					let toY = toOffset.top + this.to.offsetHeight / 2;
 
-					let deltaX = (toX - fromX) / 1.5;
-					let deltaY = (toY - fromY) / 1.5;
-					if (this.shape == 'curveX') {
-						deltaY = 0;
-					} else if (this.shape == 'curveY') {
-						deltaX = 0;
-					}
-					this.line.setAttribute("d", `
+			}
+			setPositionLine() {
+				let fromOffset = this.getOffset(this.from);
+				let toOffset = this.getOffset(this.to);
+				let fromX = fromOffset.left + this.from.offsetWidth / 2;
+				let fromY = fromOffset.top + this.from.offsetHeight / 2;
+				let toX = toOffset.left + this.to.offsetWidth / 2;
+				let toY = toOffset.top + this.to.offsetHeight / 2;
+
+				let deltaX = (toX - fromX) / 1.5;
+				let deltaY = (toY - fromY) / 1.5;
+				if (this.shape == 'curveX') {
+					deltaY = 0;
+				} else if (this.shape == 'curveY') {
+					deltaX = 0;
+				}
+				this.line.setAttribute("d", `
 						M${fromX} ${fromY} 
 						C${fromX + deltaX} ${fromY + deltaY} 
 							${toX - deltaX}  ${toY - deltaY}
 							${toX} ${toY}
 					`);
-				}
-				getOffset(e){
-					return {
-						"left": e.getBoundingClientRect().left + window.scrollX,
-						"top": e.getBoundingClientRect().top + window.scrollY
-					}
+			}
+			getOffset(e) {
+				return {
+					"left": e.getBoundingClientRect().left + window.scrollX,
+					"top": e.getBoundingClientRect().top + window.scrollY
 				}
 			}
+		}
 
-			new CurveSVG(
-				{
-					from: ".accueil .boule",
-					to: "#formation .boule",
-					style: "curve",
-					shape: "curveY",
-					attributes: {
-						"data-class": "growLine"
-					}
-				}
-			);
+		new CurveSVG(
+			{
+				from: ".accueil .boule",
+				to: "#formation .boule",
+				style: "curve growLine",
+				shape: "curveY"
+			}
+		);
 
-			new CurveSVG(
-				{
-					from: ".depart .barre:nth-child(1)",
-					to: ".quinconce>div:nth-child(1)>div",
-					style: "line",
-					observe:[
-						".quinconce>div:nth-child(1)"
-					],
-					attributes: {
-						"data-class": "growLine",
-						"data-delay": "0"
-					}
+		new CurveSVG(
+			{
+				from: ".depart .barre:nth-child(1)",
+				to: ".quinconce>div:nth-child(1)>div",
+				style: "line",
+				observe: [
+					".quinconce>div:nth-child(1)"
+				],
+				attributes: {
+					"data-class": "growLine",
+					"data-delay": "0"
 				}
-			);
-			new CurveSVG(
-				{
-					from: ".depart .barre:nth-child(2)",
-					to: ".quinconce>div:nth-child(2)>div",
-					style: "line",
-					observe:[
-						".quinconce>div:nth-child(2)"
-					],
-					attributes: {
-						"data-class": "growLine",
-						"data-delay": "200"
-					}
+			}
+		);
+		new CurveSVG(
+			{
+				from: ".depart .barre:nth-child(2)",
+				to: ".quinconce>div:nth-child(2)>div",
+				style: "line",
+				observe: [
+					".quinconce>div:nth-child(2)"
+				],
+				attributes: {
+					"data-class": "growLine",
+					"data-delay": "200"
 				}
-			);
-			new CurveSVG(
-				{
-					from: ".depart .barre:nth-child(3)",
-					to: ".quinconce>div:nth-child(3)>div",
-					style: "line",
-					observe:[
-						".quinconce>div:nth-child(3)"
-					],
-					attributes: {
-						"data-class": "growLine",
-						"data-delay": "400"
-					}
+			}
+		);
+		new CurveSVG(
+			{
+				from: ".depart .barre:nth-child(3)",
+				to: ".quinconce>div:nth-child(3)>div",
+				style: "line",
+				observe: [
+					".quinconce>div:nth-child(3)"
+				],
+				attributes: {
+					"data-class": "growLine",
+					"data-delay": "400"
 				}
-			);
-			new CurveSVG(
-				{
-					from: ".depart .barre:nth-child(4)",
-					to: ".quinconce>div:nth-child(4)>div",
-					style: "line",
-					observe:[
-						".quinconce>div:nth-child(4)"
-					],
-					attributes: {
-						"data-class": "growLine",
-						"data-delay": "600"
-					}
+			}
+		);
+		new CurveSVG(
+			{
+				from: ".depart .barre:nth-child(4)",
+				to: ".quinconce>div:nth-child(4)>div",
+				style: "line",
+				observe: [
+					".quinconce>div:nth-child(4)"
+				],
+				attributes: {
+					"data-class": "growLine",
+					"data-delay": "600"
 				}
-			);
+			}
+		);
 
-		});
+		//	});
 
 		/****************/
 		/* Lazy load images */
 		/***************/
-		window.addEventListener("scroll", lazy, {passive: true});
 
 		function lazy() {
 			document.querySelectorAll("[data-lazy-src]").forEach(function (img) {
@@ -821,24 +812,24 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 				}
 			});
 		}
-
+		window.addEventListener("scroll", lazy, { passive: true });
 		lazy();
 
 		/****************/
 		/* Add class when in viewport */
 		/***************/
 
-		function addClass(){
-			document.querySelectorAll("[data-class]").forEach(e=>{
-				if(e.getBoundingClientRect().y < window.innerHeight - (e.dataset.offset || 0)){
-					setTimeout(()=>{
+		function addClass() {
+			document.querySelectorAll("[data-class]").forEach(e => {
+				if (e.getBoundingClientRect().y < window.innerHeight - (e.dataset.offset || 0)) {
+					setTimeout(() => {
 						e.classList.add(e.dataset.class);
 						e.removeAttribute("data-class");
 					}, e.dataset.delay || 0)
 				}
 			})
 		}
-		document.addEventListener("scroll", addClass, {passive: true});
+		window.addEventListener("scroll", addClass, { passive: true });
 		addClass();
 
 		/****************/
@@ -862,6 +853,38 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 		}
 		window.addEventListener("scroll", parallax, { passive: true });
 		parallax();
+
+		/****************/
+		/* Style proportionnel */
+		/****************/
+
+		class propotialStyle {
+			constructor(data) {
+				this.target = document.querySelector(data.target);
+				this.reference = document.querySelector(data.reference);
+				this.styles = data.styles;
+				window.addEventListener("scroll", () => { this.applyStyles() });
+			}
+			applyStyles() {
+				let coef = 1 - (this.reference.getBoundingClientRect().top / window.innerHeight);
+				if (coef <= 0) { coef = 0; }
+				if (coef >= 1) { coef = 1; }
+
+				for (const key in this.styles) {
+					this.target.style.setProperty(
+						key,
+						eval("`" + this.styles[key] + "`")
+					);
+				};
+			}
+		}
+		new propotialStyle({
+			target: ".curve.growLine",
+			reference: "#formation",
+			styles: {
+				"stroke-dashoffset": "-${coef*100}"
+			}
+		})
 	</script>
 </body>
 
