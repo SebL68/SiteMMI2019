@@ -99,11 +99,44 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
+			overflow: auto;
 			background: pink;
 			z-index: 109;
 			pointer-events: none;
 			clip-path: circle(0px at 40px calc(100% - 40px));
 			transition: clip-path 0.4s;
+
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto auto 1fr;
+			grid-auto-flow: dense;
+			grid-gap: 20px;
+			padding: 20px;
+		}
+
+		.infoContent>div:nth-child(2) {
+			grid-row: span 3;
+		}
+
+		.infoContent>div {
+			background: #FFF;
+			border: 1px solid #AAA;
+			padding: 20px;
+		}
+
+		.infoContent h2 {
+			font-size: 28px;
+		}
+
+		.infoContent a {
+			margin: 10px auto 10px auto;
+			padding: 25px;
+			font-size: 18px;
+			text-decoration: none;
+			color: #FFF;
+			background: linear-gradient(150deg, purple, rgb(104, 104, 255));
+			border-radius: 150px;
+			display: inline-block;
 		}
 
 		.openInfo {
@@ -113,7 +146,6 @@
 
 		.openInfo .infoContent {
 			pointer-events: initial;
-			display: block;
 			clip-path: circle(100%);
 		}
 
@@ -260,7 +292,7 @@
 			width: 80px;
 			height: 80px;
 			border-radius: 100%;
-			background: #424242;
+			background: #3b3131;
 			flex-shrink: 0;
 			overflow: hidden;
 			display: block;
@@ -317,7 +349,6 @@
 
 		.quinconce img {
 			width: 100%;
-			;
 		}
 
 		.barre {
@@ -341,7 +372,22 @@
 <body>
 	<svg class=svgLines></svg>
 	<div class=info onclick="toggle('html', 'openInfo')">?</div>
-	<div class="infoContent" onclick="toggle('html', 'openInfo')"></div>
+	<div class="infoContent" onclick="toggle('html', 'openInfo')">
+		<div>
+			<h2>Chef de département</h2>
+			<p>Michel Grevillot</p>
+		</div>
+		<div>
+			<h2>Nous trouver</h2>
+			<a rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=61+rue+albert+camus+Mulhouse"
+				target="_blank">📍 61 rue Albert Camus, 68093 Mulhouse</a>
+		</div>
+		<div>
+			<h2>Nous contacter</h2>
+			<a href="mailto:mmi.iutmulhouse@uha.fr" target="_blank">📧 mmi.iutmulhouse@uha.fr</a><br>
+			<a href="tel:0389337580" target="_blank">📞 03 89 33 75 80</a>
+		</div>
+	</div>
 	<section class=accueil>
 		<header>
 
@@ -602,7 +648,8 @@ img/communication/communication_go9ro1_c_scale,w_548.jpg 548w,
 img/communication/communication_go9ro1_c_scale,w_634.jpg 634w,
 img/communication/communication_go9ro1_c_scale,w_680.jpg 680w"
 					data-lazy-src="img/communication/communication_go9ro1_c_scale,w_680.jpg" alt="Communication">
-				<button><!--En voir plus-->A venir</button>
+				<button>
+					<!--En voir plus-->A venir</button>
 			</div>
 			<div data-speed="-0.1">
 				<div class="point"></div>Infographies et mises en page
@@ -615,7 +662,8 @@ img/graphisme/graphisme_ekmyjt_c_scale,w_574.jpg 574w,
 img/graphisme/graphisme_ekmyjt_c_scale,w_663.jpg 663w,
 img/graphisme/graphisme_ekmyjt_c_scale,w_680.jpg 680w" data-lazy-src="img/graphisme/graphisme_ekmyjt_c_scale,w_680.jpg"
 					alt="Graphisme">
-				<button><!--En voir plus-->A venir</button>
+				<button>
+					<!--En voir plus-->A venir</button>
 			</div>
 			<div data-speed="0.15">
 				<div class="point"></div>Vidéos et animations
@@ -627,7 +675,8 @@ img/video/video_bx7g0s_c_scale,w_481.jpg 481w,
 img/video/video_bx7g0s_c_scale,w_587.jpg 587w,
 img/video/video_bx7g0s_c_scale,w_657.jpg 657w,
 img/video/video_bx7g0s_c_scale,w_680.jpg 680w" data-lazy-src="img/video/video_bx7g0s_c_scale,w_680.jpg" alt="Vidéo">
-				<button><!--En voir plus-->A venir</button>
+				<button>
+					<!--En voir plus-->A venir</button>
 			</div>
 			<div data-speed="-0.2">
 				<div class="point"></div>Sites internets
@@ -641,7 +690,8 @@ img/code/code-original_uyvyn1_c_scale,w_623.jpg 623w,
 img/code/code-original_uyvyn1_c_scale,w_670.jpg 670w,
 img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/code-original_uyvyn1_c_scale,w_680.jpg"
 					alt="Codeur">
-				<button><!--En voir plus-->A venir</button>
+				<button>
+					<!--En voir plus-->A venir</button>
 			</div>
 		</div>
 		<p>
