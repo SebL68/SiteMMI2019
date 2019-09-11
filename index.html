@@ -100,7 +100,8 @@
 			right: 0;
 			bottom: 0;
 			overflow: auto;
-			background: pink;
+			background: #FAFAFA;
+			font-size: 18px;
 			z-index: 109;
 			pointer-events: none;
 			clip-path: circle(0px at 40px calc(100% - 40px));
@@ -128,15 +129,17 @@
 			font-size: 28px;
 		}
 
-		.infoContent a {
+		.infoContent>div:not(:last-child) a {
 			margin: 10px auto 10px auto;
 			padding: 25px;
-			font-size: 18px;
 			text-decoration: none;
 			color: #FFF;
 			background: linear-gradient(150deg, purple, rgb(104, 104, 255));
 			border-radius: 150px;
 			display: inline-block;
+		}
+		.infoContent>div:last-child{
+			margin-left: 80px;
 		}
 
 		.openInfo {
@@ -371,8 +374,10 @@
 
 <body>
 	<svg class=svgLines></svg>
+
+
 	<div class=info onclick="toggle('html', 'openInfo')">?</div>
-	<div class="infoContent" onclick="toggle('html', 'openInfo')">
+	<div class="infoContent">
 		<div>
 			<h2>Chef de département</h2>
 			<p>Michel Grevillot</p>
@@ -387,7 +392,15 @@
 			<a href="mailto:mmi.iutmulhouse@uha.fr" target="_blank">📧 mmi.iutmulhouse@uha.fr</a><br>
 			<a href="tel:0389337580" target="_blank">📞 03 89 33 75 80</a>
 		</div>
+		<div>
+			Site réalisé par le département MMI.<br>
+			Hebergé par l'<a href="https://www.uha.fr/mentions-legales/">UHA</a>, pour la <a href="http://www.iutmulhouse.uha.fr/mentions-legales.html">composante IUT</a> sous la responsabilité du directeur, M. Jean-Charles Fontaine.<br>
+			Aucune donnée personnelle n'est collectée.<br>
+			L'ensemble du code est sous licence MIT, vous pouvez le réutiliser, modifier, etc. Si vous réutilisez du code, n'hésitez pas à dire <a href="mailto:sebastien.lehmann@uha.fr">merci</a> :-)
+		</div>
 	</div>
+
+
 	<section class=accueil>
 		<header>
 
