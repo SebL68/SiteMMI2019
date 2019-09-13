@@ -1,0 +1,301 @@
+.svgLines {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 100;
+}
+
+.solidLine {
+	stroke: #424242;
+	stroke-width: 5;
+}
+
+.curve, .line {
+	fill: none;
+	stroke: #424242;
+	stroke-linecap: round;
+}
+
+.line {
+	stroke-dasharray: 100;
+	stroke-dashoffset: 100;
+	stroke-width: 5;
+	transition: stroke-dashoffset 1.2s;
+}
+
+.curve {
+	stroke-dasharray: 0 100 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5;
+	stroke-width: 10;
+	stroke-dashoffset: 1;
+}
+
+.line.growLine {
+	stroke-dashoffset: 0;
+}
+
+button {
+	background: linear-gradient(150deg, purple, blue);
+	border: none;
+	color: #FFF;
+	padding: 10px 20px 10px 20px;
+	border-radius: 20px;
+	font-weight: bold;
+}
+
+/***********************/
+/* Infos
+/***********************/
+.infoContent {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	background: #FAFAFA;
+	font-size: 18px;
+	z-index: 109;
+	pointer-events: none;
+	clip-path: circle(0px at 40px calc(100% - 40px));
+	transition: clip-path 0.4s;
+
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	grid-template-rows: auto auto 1fr;
+	grid-auto-flow: dense;
+	grid-gap: 20px;
+	padding: 20px;
+}
+
+.infoContent>div:nth-child(2) {
+	grid-row: span 3;
+}
+
+.infoContent>div {
+	background: #FFF;
+	border: 1px solid #AAA;
+}
+
+.infoContent h2 {
+	font-size: 28px;
+	background: linear-gradient(90deg, pink, #FFF);
+	margin: 0;
+	padding: 20px;
+}
+
+.infoContent>div>div {
+	margin: 20px;
+}
+
+.infoContent>div:not(:last-child) a {
+	margin: 10px auto 10px auto;
+	padding: 25px;
+	text-decoration: none;
+	text-align: center;
+	color: #FFF;
+	background: linear-gradient(150deg, purple, rgb(104, 104, 255));
+	border-radius: 150px;
+	display: inline-block;
+}
+
+.infoContent>div:last-child {
+	margin-left: 80px;
+}
+
+.infoContent>div:nth-child(2) {
+	background-image: url(../img/PlanMMI.svg);
+	background-position: 50% 50%;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.openInfo {
+	overflow: hidden;
+	margin-right: 5px;
+}
+
+.openInfo .infoContent {
+	pointer-events: initial;
+	clip-path: circle(100%);
+}
+
+/***********************/
+/* La formation */
+/**********************/
+
+#formation {
+	padding-top: 160px;
+	background: radial-gradient(circle at 40px -40px, #FFF 60px, rgba(255, 255, 255, 0.4) 600px, rgba(0, 0, 0, 0) 600px), radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0) 200px, rgba(255, 255, 255, 0.4) 200px, rgba(255, 255, 255, 0.4) 220px, rgba(0, 0, 0, 0)), linear-gradient(#0000FF 0%, #FFF 25%);
+}
+
+#formation>h2 {
+	display: none;
+}
+
+.depart>span {
+	color: blue;
+}
+
+.depart {
+	margin: 60px;
+	width: 60%;
+}
+
+.boule {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	background: #3b3131;
+	flex-shrink: 0;
+	overflow: hidden;
+	display: block;
+}
+
+.pointBlanc {
+	width: 50%;
+	height: 50%;
+	margin: 25%;
+	border-radius: 100%;
+	background: #FFF;
+	cursor: pointer;
+	animation: pioupiouBlanc 0.8s alternate infinite;
+}
+
+@keyframes pioupiouBlanc {
+	0% {
+		background: #6159e6;
+	}
+}
+
+.quinconce {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	font-size: 28px;
+	text-align: center;
+}
+
+.quinconce>div {
+	flex: 1;
+	cursor: pointer;
+	margin: 100px 3% 100px 3%;
+	padding: 20px;
+	border: 1px solid #BBB;
+	box-shadow: 0 0 0px #BBB;
+	animation: pioupiou 0.4s alternate infinite;
+	transition: background 0.2s;
+}
+
+.quinconce>div:hover {
+	background: rgba(0, 0, 255, 0.1);
+}
+
+@keyframes pioupiou {
+	0% {
+		box-shadow: 0 0 6px #BBB;
+	}
+}
+
+.quinconce>div:nth-child(odd) {
+	margin-top: 200px;
+}
+
+.quinconce img {
+	width: 100%;
+}
+
+.barre {
+	height: 10px;
+	flex: 1;
+	background: #424242;
+	border-radius: 5px;
+	margin: 5px
+}
+
+.point {
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+	margin: auto;
+	border: 1px solid #AAA;
+}
+
+.center {
+	width: 60%;
+	margin: auto;
+}
+
+.vignette {
+	padding: 60px;
+	margin: 200px 60px;
+	box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+.vignette>.flex>* {
+	margin: 30px;
+}
+
+.centrer {
+	text-align: center;
+}
+
+.big {
+	font-size: 62px;
+}
+
+/****************/
+
+/* Section travail */
+
+/****************/
+
+.travail {
+	background: rgb(45, 196, 27);
+	padding: 60px;
+	color: #FFF;
+}
+
+.travail>h2 {
+	margin-top: 0;
+}
+
+.travail h3 {
+	font-weight: normal;
+	font-size: 54px;
+	margin: 0;
+}
+
+.travail p {
+	margin: 0;
+}
+
+.travail>div {
+	display: flex;
+	align-items: flex-start;
+	margin-top: 40px;
+}
+
+.travail>div:nth-child(odd) {
+	flex-direction: row-reverse;
+}
+
+.travail>div>* {
+	margin: 2%;
+	flex: 6;
+}
+.travail>div>img {
+	flex: 4;
+}
+
+/****************/
+
+/* Section enseignement */
+
+/****************/
+
+.enseignement {
+	padding: 60px;
+}

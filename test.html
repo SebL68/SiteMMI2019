@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		img{
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+		<img alt="Vidéos" data-lazy-srcset="
+		img/video/video_hgyqr1_c_scale,w_190.webp 190w,
+		img/video/video_hgyqr1_c_scale,w_394.webp 394w,
+		img/video/video_hgyqr1_c_scale,w_563.webp 563w,
+		img/video/video_hgyqr1_c_scale,w_722.webp 722w,
+		img/video/video_hgyqr1_c_scale,w_871.webp 871w,
+		img/video/video_hgyqr1_c_scale,w_997.webp 997w,
+		img/video/video_hgyqr1_c_scale,w_1000.webp 1000w,
+		img/video/video_bx7g0s_c_scale,w_50.jpg 50w,
+		img/video/video_bx7g0s_c_scale,w_240.jpg 240w,
+		img/video/video_bx7g0s_c_scale,w_381.jpg 381w,
+		img/video/video_bx7g0s_c_scale,w_481.jpg 481w,
+		img/video/video_bx7g0s_c_scale,w_587.jpg 587w,
+		img/video/video_bx7g0s_c_scale,w_657.jpg 657w,
+		img/video/video_bx7g0s_c_scale,w_680.jpg 680w" data-lazy-src="img/video/video_bx7g0s_c_scale,w_680.jpg" alt="Vidéo">
+
+		<script>
+		function lazy() {
+		document.querySelectorAll("[data-lazy-src]").forEach(function (img) {
+			if (img.getBoundingClientRect().y < window.innerHeight + 300) {
+				img.srcset = img.dataset.lazySrcset || "";
+				img.src = img.dataset.lazySrc;
+				img.removeAttribute("data-lazy-src");
+				img.removeAttribute("data-lazy-srcset");
+			}
+		});
+	}
+	window.addEventListener("scroll", lazy, { passive: true });
+	lazy();
+		</script>
+</body>
+</html>
