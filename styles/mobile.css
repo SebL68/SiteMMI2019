@@ -105,3 +105,47 @@ button {
 	border: 1px solid #BBB;
 	box-shadow: 0 0 0px #BBB;
 }
+
+.vignette {
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.vignette>.flex>* {
+	margin: 10px;
+}
+
+.centrer {
+	text-align: center;
+}
+
+.big {
+	font-size: 62px;
+}
+
+/****************/
+/* Section travail */
+/****************/
+
+.travail {
+	background: rgb(45, 196, 27);
+	padding: 10px;
+	color: #FFF;
+}
+.travail p{
+	font-size: 18px;
+}
+
+/****************/
+
+/* Section enseignement */
+
+/****************/
+
+.enseignement {
+	padding: 10px;
+}
+.enseignement span{
+	display: block;
+}

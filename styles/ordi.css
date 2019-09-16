@@ -155,7 +155,6 @@
 	width: 60%;
 	margin: auto;
 }
-
 .vignette {
 	padding: 60px;
 	margin: 200px 60px;
@@ -166,14 +165,6 @@
 	margin: 30px;
 }
 
-.centrer {
-	text-align: center;
-}
-
-.big {
-	font-size: 62px;
-}
-
 /****************/
 
 /* Section travail */
@@ -181,9 +172,7 @@
 /****************/
 
 .travail {
-	background: rgb(45, 196, 27);
 	padding: 60px;
-	color: #FFF;
 }
 
 .travail>h2 {
@@ -226,4 +215,7 @@
 
 .enseignement {
 	padding: 60px;
+}
+.enseignement span{
+	display: inline;
 }
