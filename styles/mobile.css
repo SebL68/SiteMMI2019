@@ -28,7 +28,6 @@ button {
 	z-index: 109;
 	pointer-events: none;
 	clip-path: circle(0px at 40px calc(100% - 40px));
-	transition: clip-path 0.4s;
 
 	padding: 20px;
 }
