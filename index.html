@@ -48,8 +48,11 @@
 			cursor: pointer;
 		}
 		.accueil {
+			text-align: center;
 			min-height: 100vh;
 			position: relative;
+			display: flex;
+			flex-direction: column;
 			background:
 				radial-gradient(circle at 40px calc(100% - 40px),
 					#FFF 60px,
@@ -83,28 +86,13 @@
 
 		}
 
-		.deco {
-			margin: 0 100px 0 auto;
-			padding: 10px;
-			background: rgba(255, 255, 255, 0.7);
-			box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.24);
-			width: 200px;
-			transform: skewX(-30deg);
-			direction: rtl;
-
-		}
-
-		.deco>* {
-			transform: skewX(30deg);
-			display: block;
-		}
+		
 
 		h1 {
-			width: 80vw;
 			margin: 0;
 			font-family: 'Graduate', cursive;
 			color: #002bff;
-			font-size: 48px;
+			font-size: 30px;
 
 			text-shadow:
 				5px 5px #FFF,
@@ -121,29 +109,95 @@
 		.logoIUT {
 			box-sizing: border-box;
 			width: 100%;
-			padding: 20px;
+			padding: 26px 40px 40px 30px;
+			background: #FFF;
+			clip-path: polygon(0 0, 100% 0, 100% 85%, 5% 100%);
 		}
 
 		.logoSocial {
-			display: inline-block;
 			width: 40px;
 			margin: 5px;
 		}
-
+		.deco>* {
+			display: inline-block;
+		}
 		.flex {
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
 
 		}
-
+		.accueil>div{
+			margin: auto;
+		}
 		.accueil>.flex>* {
-			width: 40%;
 			margin: 0 50px 0 50px;
 		}
+		.accueil>.flex>svg{
+			display: none;
+		}
 
+		.boule {
+			width: 80px;
+			height: 80px;
+			border-radius: 100%;
+			background: #3b3131;
+			flex-shrink: 0;
+			overflow: hidden;
+			display: block;
+		}
 		.accueil .boule {
 			margin: 40px auto;
+		}
+		.pointBlanc {
+			width: 50%;
+			height: 50%;
+			margin: 25%;
+			border-radius: 100%;
+			background: #FFF;
+			cursor: pointer;
+			animation: pioupiouBlanc 0.8s alternate infinite;
+		}
+
+		@keyframes pioupiouBlanc {
+			0% {
+				background: #6159e6;
+			}
+		}
+
+		@media screen and (min-width: 1000px){
+			.accueil{
+				text-align: initial;
+			}
+			.accueil>div{
+				margin: 0;
+			}
+			.deco {
+				margin: 0 100px 0 auto;
+				padding: 10px;
+				background: rgba(255, 255, 255, 0.7);
+				box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.24);
+				width: 200px;
+				transform: skewX(-30deg);
+				direction: rtl;
+			}
+
+			.deco>* {
+				transform: skewX(30deg);
+			}
+			.logoIUT {
+				background: initial;
+			}
+			.accueil>.flex>* {
+				width: 40%;
+			}
+			.accueil>.flex>svg{
+				display: block;
+			}
+			h1 {
+				width: 80vw;
+				font-size: 48px;
+			}
 		}
 	</style>
 
@@ -163,6 +217,13 @@
 			<div>Michel Grevillot</div>
 		</div>
 		<div>
+			<h2>Nous contacter</h2>
+			<div>
+				<a href="mailto:mmi.iutmulhouse@uha.fr" target="_blank">📧 mmi.iutmulhouse@uha.fr</a>
+				<a href="tel:0389337580" target="_blank">📞 03 89 33 75 80</a>
+			</div>
+		</div>
+		<div>
 			<h2>Nous trouver</h2>
 			<div>
 				<a rel="noopener"
@@ -170,13 +231,7 @@
 					target="_blank">📍 61 rue Albert Camus, 68093 Mulhouse</a>
 			</div>
 		</div>
-		<div>
-			<h2>Nous contacter</h2>
-			<div class="flex">
-				<a href="mailto:mmi.iutmulhouse@uha.fr" target="_blank">📧 mmi.iutmulhouse@uha.fr</a>
-				<a href="tel:0389337580" target="_blank">📞 03 89 33 75 80</a>
-			</div>
-		</div>
+		
 		<div>
 			<div>Site réalisé par le département MMI.<br>
 				Hebergé par l'<a href="https://www.uha.fr/mentions-legales/">UHA</a>, pour la <a
@@ -422,9 +477,6 @@
 	</section>
 
 	<section id=formation>
-		<h2>
-			La formation
-		</h2>
 		<div class=flex>
 			<div class=boule></div>
 			<div class=depart>

@@ -5,6 +5,14 @@ img{
 	display: none;
 }
 
+button {
+	background: linear-gradient(150deg, purple, blue);
+	border: none;
+	color: #FFF;
+	padding: 10px 20px 10px 20px;
+	border-radius: 20px;
+	font-weight: bold;
+}
 /***********************/
 /* Infos
 /***********************/
@@ -48,18 +56,19 @@ img{
 	color: #FFF;
 	background: linear-gradient(150deg, purple, rgb(104, 104, 255));
 	border-radius: 150px;
-	display: inline-block;
+	display: table;
 }
 
 .infoContent>div:last-child {
 	margin-left: 80px;
 }
 
-.infoContent>div:nth-child(2) {
+.infoContent>div:nth-child(3) {
 	background-image: url(../img/PlanMMI.svg);
-	background-position: 50% 50%;
+	background-position: 50% 100%;
 	background-size: contain;
 	background-repeat: no-repeat;
+	padding-bottom: 90vw;
 }
 
 .openInfo {
@@ -70,4 +79,30 @@ img{
 .openInfo .infoContent {
 	pointer-events: initial;
 	clip-path: circle(100%);
+}
+
+/***********************/
+/* La formation */
+/**********************/
+#formation {
+	font-size: 26px;
+	padding: 20px 10px 10px 10px;
+	background: radial-gradient(circle at 40px -40px, #FFF 60px, rgba(255, 255, 255, 0.4) 600px, rgba(0, 0, 0, 0) 600px), radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0) 200px, rgba(255, 255, 255, 0.4) 200px, rgba(255, 255, 255, 0.4) 220px, rgba(0, 0, 0, 0)), linear-gradient(#0000FF 0%, #FFF 25%);
+}
+#formation .boule{
+	display: none;
+}
+
+.depart>span {
+	color: blue;
+}
+.quinconce {
+	text-align: center;
+}
+.quinconce>div {
+	cursor: pointer;
+	margin: 10px;
+	padding: 20px;
+	border: 1px solid #BBB;
+	box-shadow: 0 0 0px #BBB;
 }

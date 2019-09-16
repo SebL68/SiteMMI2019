@@ -6,6 +6,7 @@
 	height: 100%;
 	pointer-events: none;
 	z-index: 100;
+	display: initial;
 }
 
 .solidLine {
@@ -36,28 +37,21 @@
 	stroke-dashoffset: 0;
 }
 
-button {
-	background: linear-gradient(150deg, purple, blue);
-	border: none;
-	color: #FFF;
-	padding: 10px 20px 10px 20px;
-	border-radius: 20px;
-	font-weight: bold;
-}
-
 /***********************/
 /* Infos
 /***********************/
 .infoContent {
 	display: grid;
 	grid-template-columns: 2fr 3fr;
-	grid-template-rows: auto auto 1fr;
+	grid-template-rows: auto auto auto 1fr;
 	grid-auto-flow: dense;
 	grid-gap: 20px;
 }
 
-.infoContent>div:nth-child(2) {
-	grid-row: span 3;
+.infoContent>div:nth-child(3) {
+	grid-row: 1/span 4;
+	grid-column: 2/span 1;
+	padding-bottom: 0;
 }
 
 .infoContent>div {
@@ -79,12 +73,6 @@ button {
 	margin-left: 80px;
 }
 
-.infoContent>div:nth-child(2) {
-	background-image: url(../img/PlanMMI.svg);
-	background-position: 50% 50%;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
 
 .openInfo {
 	overflow: hidden;
@@ -99,18 +87,13 @@ button {
 /***********************/
 /* La formation */
 /**********************/
-
-#formation {
-	padding-top: 160px;
-	background: radial-gradient(circle at 40px -40px, #FFF 60px, rgba(255, 255, 255, 0.4) 600px, rgba(0, 0, 0, 0) 600px), radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0) 200px, rgba(255, 255, 255, 0.4) 200px, rgba(255, 255, 255, 0.4) 220px, rgba(0, 0, 0, 0)), linear-gradient(#0000FF 0%, #FFF 25%);
+#formation .boule{
+	display: initial;
 }
 
-#formation>h2 {
-	display: none;
-}
-
-.depart>span {
-	color: blue;
+#formation{
+	padding: 160px 0 0 0;
+	font-size: 36px;
 }
 
 .depart {
@@ -118,47 +101,17 @@ button {
 	width: 60%;
 }
 
-.boule {
-	width: 80px;
-	height: 80px;
-	border-radius: 100%;
-	background: #3b3131;
-	flex-shrink: 0;
-	overflow: hidden;
-	display: block;
-}
-
-.pointBlanc {
-	width: 50%;
-	height: 50%;
-	margin: 25%;
-	border-radius: 100%;
-	background: #FFF;
-	cursor: pointer;
-	animation: pioupiouBlanc 0.8s alternate infinite;
-}
-
-@keyframes pioupiouBlanc {
-	0% {
-		background: #6159e6;
-	}
-}
-
 .quinconce {
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
 	font-size: 28px;
-	text-align: center;
 }
 
 .quinconce>div {
 	flex: 1;
-	cursor: pointer;
 	margin: 100px 3% 100px 3%;
 	padding: 20px;
-	border: 1px solid #BBB;
-	box-shadow: 0 0 0px #BBB;
 	animation: pioupiou 0.4s alternate infinite;
 	transition: background 0.2s;
 }
