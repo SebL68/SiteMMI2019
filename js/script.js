@@ -1,8 +1,19 @@
+/****************
+Après le charchement de la page, on cherche tous les styles préchargés et on les transforme en style valide 
+****************/
+
+document.querySelectorAll('[rel="preload"][as="style"]').forEach(function(e){
+	e.rel = "stylesheet";
+});
+
+/********************/
 function toggle(target, className) {
 	document.querySelectorAll(target).forEach(function (e) {
 		e.classList.toggle(className);
 	});
 }
+/********************/
+
 /*  
 	Relier par une courbe ou une ligne deux éléments HTML.
 	Gère le redimentionnement de pages.

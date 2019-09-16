@@ -49,25 +49,11 @@ button {
 /* Infos
 /***********************/
 .infoContent {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	overflow: auto;
-	background: #FAFAFA;
-	font-size: 18px;
-	z-index: 109;
-	pointer-events: none;
-	clip-path: circle(0px at 40px calc(100% - 40px));
-	transition: clip-path 0.4s;
-
 	display: grid;
 	grid-template-columns: 2fr 3fr;
 	grid-template-rows: auto auto 1fr;
 	grid-auto-flow: dense;
 	grid-gap: 20px;
-	padding: 20px;
 }
 
 .infoContent>div:nth-child(2) {
@@ -75,19 +61,7 @@ button {
 }
 
 .infoContent>div {
-	background: #FFF;
 	border: 1px solid #AAA;
-}
-
-.infoContent h2 {
-	font-size: 28px;
-	background: linear-gradient(90deg, pink, #FFF);
-	margin: 0;
-	padding: 20px;
-}
-
-.infoContent>div>div {
-	margin: 20px;
 }
 
 .infoContent>div:not(:last-child) a {
