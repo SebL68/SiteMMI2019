@@ -2,7 +2,7 @@
 Après le charchement de la page, on cherche tous les styles préchargés et on les transforme en style valide 
 ****************/
 
-document.querySelectorAll('[rel="preload"][as="style"]').forEach(function(e){
+document.querySelectorAll('[rel="preload"][as="style"]').forEach(function (e) {
 	e.rel = "stylesheet";
 });
 
@@ -13,45 +13,73 @@ function toggle(target, className) {
 	});
 }
 /********************/
+/****************/
+/* Lazy load images */
+/***************/
 
-/*  
-	Relier par une courbe ou une ligne deux éléments HTML.
-	Gère le redimentionnement de pages.
-	PathLength à 100.
+function lazy() {
+	document.querySelectorAll("[data-lazy-src]").forEach(function (img) {
+		if (img.getBoundingClientRect().y < window.innerHeight + 300) {
+			img.srcset = img.dataset.lazySrcset || "";
+			img.src = img.dataset.lazySrc;
+			img.removeAttribute("data-lazy-src");
+			img.removeAttribute("data-lazy-srcset");
+		}
+	});
+}
+window.addEventListener("scroll", lazy, { passive: true });
+lazy();
 
-	HTML : 
-		<svg class=svgLines></svg>
-	CSS :
-		body {
-			position: relative;
-		}
-		.svgLines {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			pointer-events: none;
-			z-index: 100;
-		}
-	JS :
-		new CurveSVG(
-			{
-				from: ".depart", 	// élément de depart de la courbe(le centre)
-				to: ".arrivee", 	// élément d'arrivée de la courbe (le centre)
-				style: "curve", 	// (option) style (class) à appliquer
-				shape: "curveY" 	// (option) type : line (défaut), curveX, curveY
-				observe: [		// (option) éléments à observer pour redessiner la courbe
-					".arrivee", 
-					...
-				],
-				attributes: {		// (option) Attributs à ajouter au path (permet d'utiliser addClass() par exemple pour des effets comme faire apparaître la courbe)
-					"data-class": "growLine" 
-				}
-			}
-		);
-*/
+/******************/
+/******************/
+/******************/
 window.addEventListener("load", function () {
+	if (window.matchMedia("(min-width: 1000px)").matches) {
+		prepare();
+	} else {
+		window.addEventListener("resize", prepare);
+	}
+});
+function prepare() {
+	window.removeEventListener("resize", prepare);
+
+	/*  
+Relier par une courbe ou une ligne deux éléments HTML.
+Gère le redimentionnement de pages.
+PathLength à 100.
+
+HTML : 
+<svg class=svgLines></svg>
+CSS :
+body {
+	position: relative;
+}
+.svgLines {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 100;
+}
+JS :
+new CurveSVG(
+	{
+		from: ".depart", 	// élément de depart de la courbe(le centre)
+		to: ".arrivee", 	// élément d'arrivée de la courbe (le centre)
+		style: "curve", 	// (option) style (class) à appliquer
+		shape: "curveY" 	// (option) type : line (défaut), curveX, curveY
+		observe: [		// (option) éléments à observer pour redessiner la courbe
+			".arrivee", 
+			...
+		],
+		attributes: {		// (option) Attributs à ajouter au path (permet d'utiliser addClass() par exemple pour des effets comme faire apparaître la courbe)
+			"data-class": "growLine" 
+		}
+	}
+);
+*/
 	class CurveSVG {
 		constructor(data) {
 			this.from = document.querySelector(data.from);
@@ -82,26 +110,28 @@ window.addEventListener("load", function () {
 
 		}
 		setPositionLine() {
-			let fromOffset = this.getOffset(this.from);
-			let toOffset = this.getOffset(this.to);
-			let fromX = fromOffset.left + this.from.offsetWidth / 2;
-			let fromY = fromOffset.top + this.from.offsetHeight / 2;
-			let toX = toOffset.left + this.to.offsetWidth / 2;
-			let toY = toOffset.top + this.to.offsetHeight / 2;
+			if (window.matchMedia("(min-width: 1000px)").matches) {
+				let fromOffset = this.getOffset(this.from);
+				let toOffset = this.getOffset(this.to);
+				let fromX = fromOffset.left + this.from.offsetWidth / 2;
+				let fromY = fromOffset.top + this.from.offsetHeight / 2;
+				let toX = toOffset.left + this.to.offsetWidth / 2;
+				let toY = toOffset.top + this.to.offsetHeight / 2;
 
-			let deltaX = (toX - fromX) / 1.5;
-			let deltaY = (toY - fromY) / 1.5;
-			if (this.shape == 'curveX') {
-				deltaY = 0;
-			} else if (this.shape == 'curveY') {
-				deltaX = 0;
+				let deltaX = (toX - fromX) / 1.5;
+				let deltaY = (toY - fromY) / 1.5;
+				if (this.shape == 'curveX') {
+					deltaY = 0;
+				} else if (this.shape == 'curveY') {
+					deltaX = 0;
+				}
+				this.line.setAttribute("d", `
+							M${fromX} ${fromY} 
+							C${fromX + deltaX} ${fromY + deltaY} 
+								${toX - deltaX}  ${toY - deltaY}
+								${toX} ${toY}
+						`);
 			}
-			this.line.setAttribute("d", `
-				M${fromX} ${fromY} 
-				C${fromX + deltaX} ${fromY + deltaY} 
-					${toX - deltaX}  ${toY - deltaY}
-					${toX} ${toY}
-			`);
 		}
 		getOffset(e) {
 			return {
@@ -177,38 +207,21 @@ window.addEventListener("load", function () {
 		}
 	);
 
-
-
-	/****************/
-	/* Lazy load images */
-	/***************/
-
-	function lazy() {
-		document.querySelectorAll("[data-lazy-src]").forEach(function (img) {
-			if (img.getBoundingClientRect().y < window.innerHeight + 300) {
-				img.srcset = img.dataset.lazySrcset || "";
-				img.src = img.dataset.lazySrc;
-				img.removeAttribute("data-lazy-src");
-				img.removeAttribute("data-lazy-srcset");
-			}
-		});
-	}
-	window.addEventListener("scroll", lazy, { passive: true });
-	lazy();
-
 	/****************/
 	/* Add class when in viewport */
 	/***************/
 
 	function addClass() {
-		document.querySelectorAll("[data-class]").forEach(e => {
-			if (e.getBoundingClientRect().y < window.innerHeight - (e.dataset.offset || 0)) {
-				setTimeout(() => {
-					e.classList.add(e.dataset.class);
-					e.removeAttribute("data-class");
-				}, e.dataset.delay || 0)
-			}
-		})
+		if (window.matchMedia("(min-width: 1000px)").matches) {
+			document.querySelectorAll("[data-class]").forEach(e => {
+				if (e.getBoundingClientRect().y < window.innerHeight - (e.dataset.offset || 0)) {
+					setTimeout(() => {
+						e.classList.add(e.dataset.class);
+						e.removeAttribute("data-class");
+					}, e.dataset.delay || 0)
+				}
+			})
+		}
 	}
 	window.addEventListener("scroll", addClass, { passive: true });
 	addClass();
@@ -219,7 +232,7 @@ window.addEventListener("load", function () {
 
 	var paraEl = document.querySelectorAll("[data-speed]");
 	function parallax() {
-		if(window.matchMedia("(min-width: 1000px)").matches){
+		if (window.matchMedia("(min-width: 1000px)").matches) {
 			paraEl.forEach(e => {
 				var rect = e.getBoundingClientRect();
 				var transY = e.dataset.offset || 0;
@@ -249,16 +262,18 @@ window.addEventListener("load", function () {
 			window.addEventListener("scroll", () => { this.applyStyles() }, { passive: true });
 		}
 		applyStyles() {
-			let coef = 1 - (this.reference.getBoundingClientRect().top / window.innerHeight);
-			if (coef <= 0) { coef = 0; }
-			if (coef >= 1) { coef = 1; }
+			if (window.matchMedia("(min-width: 1000px)").matches) {
+				let coef = 1 - (this.reference.getBoundingClientRect().top / window.innerHeight);
+				if (coef <= 0) { coef = 0; }
+				if (coef >= 1) { coef = 1; }
 
-			for (const key in this.styles) {
-				this.target.style.setProperty(
-					key,
-					eval("`" + this.styles[key] + "`")
-				);
-			};
+				for (const key in this.styles) {
+					this.target.style.setProperty(
+						key,
+						eval("`" + this.styles[key] + "`")
+					);
+				};
+			}
 		}
 	}
 	new propotialStyle({
@@ -269,4 +284,4 @@ window.addEventListener("load", function () {
 		}
 	})
 
-});
+};
