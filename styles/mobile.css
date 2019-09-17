@@ -4,15 +4,6 @@ img{
 .svgLines {
 	display: none;
 }
-
-button {
-	background: linear-gradient(150deg, purple, blue);
-	border: none;
-	color: #FFF;
-	padding: 10px 20px 10px 20px;
-	border-radius: 20px;
-	font-weight: bold;
-}
 /***********************/
 /* Infos
 /***********************/
@@ -27,11 +18,34 @@ button {
 	font-size: 18px;
 	z-index: 109;
 	pointer-events: none;
-	clip-path: circle(0px at 40px calc(100% - 40px));
+	clip-path: circle(0px at 65% 65%);
 
 	padding: 20px;
 }
-
+.infoContent>.fermer{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	background: linear-gradient(150deg, purple, blue);
+	border-radius: 100%;
+	width: 60px;
+	height: 60px;
+}
+.infoContent>.fermer>div{
+	height: 6px;
+	width: 40px;
+	background: #FFF;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	border-radius: 3px;
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+.infoContent>.fermer>div:nth-child(1){
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
 .infoContent>div {
 	background: #FFF;
 }

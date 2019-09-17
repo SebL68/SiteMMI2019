@@ -19,7 +19,7 @@ function toggle(target, className) {
 
 function lazy() {
 	document.querySelectorAll("[data-lazy-src]").forEach(function (img) {
-		if (img.getBoundingClientRect().y < window.innerHeight + 300) {
+		if (img.getBoundingClientRect().y < window.innerHeight + 600) {
 			img.srcset = img.dataset.lazySrcset || "";
 			img.src = img.dataset.lazySrc;
 			img.removeAttribute("data-lazy-src");
