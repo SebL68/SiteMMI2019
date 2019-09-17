@@ -147,12 +147,12 @@ img{
 /* Section travail */
 /****************/
 
-.travail {
+#travail {
 	background: rgb(45, 196, 27);
 	padding: 10px;
 	color: #FFF;
 }
-.travail p{
+#travail p{
 	font-size: 18px;
 }
 
@@ -162,9 +162,9 @@ img{
 
 /****************/
 
-.enseignement {
+#enseignement {
 	padding: 10px;
 }
-.enseignement span{
+#enseignement span{
 	display: block;
 }

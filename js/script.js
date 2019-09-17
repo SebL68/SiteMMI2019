@@ -27,7 +27,7 @@ window.addEventListener("popstate", function(){
 
 function lazy() {
 	document.querySelectorAll("[data-lazy-src]").forEach(function (img) {
-		if (img.getBoundingClientRect().y < window.innerHeight + 600) {
+		if (img.getBoundingClientRect().y < window.innerHeight + 1000) {
 			img.srcset = img.dataset.lazySrcset || "";
 			img.src = img.dataset.lazySrc;
 			img.removeAttribute("data-lazy-src");
@@ -151,7 +151,7 @@ new CurveSVG(
 
 	new CurveSVG(
 		{
-			from: ".accueil .boule",
+			from: "#accueil .boule",
 			to: "#formation .boule",
 			style: "curve growLine",
 			shape: "curveY"

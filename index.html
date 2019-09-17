@@ -9,9 +9,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MMI Mulhouse</title>
-	<meta name="googlebot" content="all">
-	<link href="https://fonts.googleapis.com/css?family=Graduate&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<script type="application/ld+json">
 		{
 		"@context": "http://schema.org",
@@ -67,7 +64,7 @@
 			font-weight: bold;
 			cursor: pointer;
 		}
-		.accueil {
+		#accueil {
 			text-align: center;
 			min-height: 100vh;
 			position: relative;
@@ -93,7 +90,7 @@
 		}
 		h1 {
 			margin: 0;
-			font-family: 'Graduate', cursive;
+			font-family: arial;
 			color: #002bff;
 			font-size: 30px;
 
@@ -130,16 +127,16 @@
 			align-items: center;
 
 		}
-		.accueil>div{
+		#accueil>div{
 			margin: auto;
 		}
-		.accueil>.flex>* {
+		#accueil>.flex>* {
 			margin: 0 50px 0 50px;
 		}
-		.accueil>.flex svg{
+		#accueil>.flex svg{
 			display: none;
 		}
-		.accueil>.flex span{
+		#accueil>.flex span{
 			color: #FFF;
 			font-size: 13px;
 			font-weight: bold;
@@ -155,7 +152,7 @@
 			overflow: hidden;
 			display: block;
 		}
-		.accueil .boule {
+		#accueil .boule {
 			margin: 10px auto;
 		}
 		.pointBlanc {
@@ -175,7 +172,7 @@
 		}
 
 		@media screen and (min-width: 1000px){
-			.accueil{
+			#accueil{
 				text-align: initial;
 				background:
 				radial-gradient(circle at 40px calc(100% - 40px),
@@ -208,7 +205,7 @@
 
 				linear-gradient(150deg, purple 20%, blue 100%);
 			}
-			.accueil>div{
+			#accueil>div{
 				margin: 0;
 			}
 			.deco {
@@ -227,10 +224,10 @@
 			.logoIUT {
 				background: initial;
 			}
-			.accueil>.flex>* {
+			#accueil>.flex>* {
 				width: 40%;
 			}
-			.accueil>.flex>svg{
+			#accueil>.flex>svg{
 				display: block;
 			}
 			h1 {
@@ -242,6 +239,7 @@
 
 	<link rel="preload" href="styles/mobile.css" as="style">
 	<link rel="preload" href="styles/ordi.css" as="style" media="screen and (min-width: 1000px)">
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" as="style">
 
 </head>
 
@@ -275,9 +273,7 @@
 		
 		<div>
 			<div>Site réalisé par le département MMI.<br>
-				Hebergé par l'<a href="https://www.uha.fr/mentions-legales/">UHA</a>, pour la <a
-					href="http://www.iutmulhouse.uha.fr/mentions-legales.html">composante IUT</a> sous la responsabilité
-				du directeur, M. Jean-Charles Fontaine.<br>
+				Hebergé par l'<a href="https://www.uha.fr/mentions-legales/">UHA</a>, pour la <a href="http://www.iutmulhouse.uha.fr/mentions-legales.html">composante IUT</a> sous la responsabilité du directeur, M. Jean-Charles Fontaine.<br>
 				Aucune donnée personnelle n'est collectée.<br>
 				L'ensemble du code est sous licence MIT, vous pouvez le réutiliser, modifier, etc. Si vous réutilisez du
 				code, n'hésitez pas à dire <a href="mailto:sebastien.lehmann@uha.fr">merci</a> :-)
@@ -285,8 +281,14 @@
 		</div>
 	</div>
 
+	<nav style="display: none">
+		<a href=#accueil>Accueil</a>
+		<a href=#formation>La formation</a>
+		<a href=#travail>Métiers</a>
+		<a href=#enseignement>Enseignements</a>
+	</nav>
 
-	<section class=accueil>
+	<section id=accueil>
 		<header>
 
 			<div class=deco>
@@ -868,7 +870,7 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 	</section>
 
 
-	<section class=travail>
+	<section id=travail>
 		<p>Prêt pour le travail !</p>
 		<h2>Mais quel travail ?</h2>
 
@@ -900,7 +902,7 @@ img/code/code-original_uyvyn1_c_scale,w_680.jpg 680w" data-lazy-src="img/code/co
 		</div>
 	</section>
 
-	<section class=enseignement>
+	<section id=enseignement>
 		<p class=centrer><span>30% Web</span> <span>30% Multimédia</span> <span>30% Communication</span></p>
 		<h2 class=centrer>100% MMI</h2>
 	</section>

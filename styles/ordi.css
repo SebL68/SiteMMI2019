@@ -207,40 +207,40 @@
 
 /****************/
 
-.travail {
+#travail {
 	padding: 60px;
 }
 
-.travail>h2 {
+#travail>h2 {
 	margin-top: 0;
 }
 
-.travail h3 {
+#travail h3 {
 	font-weight: normal;
 	font-size: 54px;
 	margin: 0;
 }
 
-.travail p {
+#travail p {
 	margin: 0;
 	font-size: 36px;
 }
 
-.travail>div {
+#travail>div {
 	display: flex;
 	align-items: flex-start;
 	margin-top: 40px;
 }
 
-.travail>div:nth-child(odd) {
+#travail>div:nth-child(odd) {
 	flex-direction: row-reverse;
 }
 
-.travail>div>* {
+#travail>div>* {
 	margin: 2%;
 	flex: 6;
 }
-.travail>div>img {
+#travail>div>img {
 	flex: 4;
 }
 
@@ -250,9 +250,9 @@
 
 /****************/
 
-.enseignement {
+#enseignement {
 	padding: 60px;
 }
-.enseignement span{
+#enseignement span{
 	display: inline;
 }
