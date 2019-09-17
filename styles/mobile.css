@@ -4,8 +4,10 @@ img{
 .svgLines {
 	display: none;
 }
-[data-speed]{
-	transform: translate(0) !important;
+@media screen and (max-width: 1000px){
+	[data-speed]{
+		transform: translate(0) !important;
+	}
 }
 /***********************/
 /* Infos
