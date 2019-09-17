@@ -29,7 +29,7 @@
 
 .curve {
 	stroke-dasharray: 0 100 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5;
-	stroke-width: 20;
+	stroke-width: 10;
 	stroke-dashoffset: 1;
 }
 
@@ -37,6 +37,42 @@
 	stroke-dashoffset: 0;
 }
 
+.svgAppear path{
+	animation: pathAnim 2s;
+	stroke-dasharray: 100;
+	stroke-dashoffset: 0;
+	stroke: rgba(0,0,0,0);	
+}
+[data-class="svgAppear"] path{
+	fill: none;
+	stroke: none;
+}
+@keyframes pathAnim{
+	0%{
+		fill: rgba(0,0,0,0);
+		stroke: #3b3131;
+		stroke-dashoffset: -100;
+	}
+	60%{
+		fill: rgba(0,0,0,0);
+	}
+	80%{
+		stroke: #3b3131;
+		stroke-dashoffset: 0;
+	}
+}
+[data-class="appear"]{
+	opacity: 0;
+}
+.appear{
+	animation: appear 0.8s;
+}
+@keyframes appear{
+	0%{
+		transform: translateX(-50%);
+		opacity: 0;
+	}
+}
 /***********************/
 /* Infos
 /***********************/

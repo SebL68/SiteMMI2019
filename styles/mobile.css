@@ -4,6 +4,9 @@ img{
 .svgLines {
 	display: none;
 }
+[data-speed]{
+	transform: translate(0) !important;
+}
 /***********************/
 /* Infos
 /***********************/
