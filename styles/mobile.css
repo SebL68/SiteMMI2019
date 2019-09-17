@@ -1,9 +1,6 @@
 img{
 	max-width: 100%;
 }
-.svgLines {
-	display: none;
-}
 @media screen and (max-width: 1000px){
 	[data-speed]{
 		transform: translate(0) !important;
@@ -22,9 +19,6 @@ img{
 	background: #FAFAFA;
 	font-size: 18px;
 	z-index: 109;
-	pointer-events: none;
-	clip-path: circle(0px at 65% 65%);
-
 	padding: 20px;
 }
 .infoContent>.fermer{
@@ -77,10 +71,6 @@ img{
 	display: table;
 }
 
-.infoContent>div:last-child {
-	margin-left: 80px;
-}
-
 .infoContent>div:nth-child(3) {
 	background-image: url(../img/PlanMMI.svg);
 	background-position: 50% 100%;
@@ -95,7 +85,7 @@ img{
 }
 
 .openInfo .infoContent {
-	pointer-events: initial;
+	display: block;
 	clip-path: circle(100%);
 }
 
