@@ -13,6 +13,14 @@ function toggle(target, className) {
 	});
 }
 /********************/
+/* Gérer le retour */
+/*******************/
+window.addEventListener("popstate", function(){
+	if(document.querySelector("html").classList.contains("openInfo")){
+		event.preventDefault();
+		toggle("html", "openInfo");
+	}
+});
 /****************/
 /* Lazy load images */
 /***************/

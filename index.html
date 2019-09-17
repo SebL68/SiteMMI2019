@@ -249,7 +249,7 @@
 	<svg class=svgLines></svg>
 
 	<div class="infoContent">
-		<div class=fermer onclick="toggle('html', 'openInfo')">
+		<div class=fermer onclick="toggle('html', 'openInfo');">
 			<div></div>
 			<div></div>
 		</div>
@@ -510,7 +510,7 @@
 			<div>
 				En train de préparer le BAC,<br>quel est ton avenir ?
 				<div class=flex>
-					<button onclick="toggle('html', 'openInfo')">Informations</button>
+					<button onclick="toggle('html', 'openInfo'); history.pushState('','openInfo','')">Informations</button>
 					<span>Découvrir la formation<a aria-label="Suite" href="#formation" class="boule"><div class="pointBlanc"></div></a></span>
 				</div>
 			</div>
