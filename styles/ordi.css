@@ -32,20 +32,24 @@
 	stroke-width: 10;
 	stroke-dashoffset: 1;
 }
-
+:not(.growLine)[data-class="growLine"]{
+	transition: 0s;
+}
 .line.growLine {
 	stroke-dashoffset: 0;
 }
 
+
+:not(.svgAppear)[data-class="svgAppear"] path{
+	fill: rgba(0,0,0,0);
+	stroke: none;
+	transition: fill 0.4s;
+}
 .svgAppear path{
 	animation: pathAnim 2s;
 	stroke-dasharray: 100;
 	stroke-dashoffset: 0;
 	stroke: rgba(0,0,0,0);	
-}
-[data-class="svgAppear"] path{
-	fill: none;
-	stroke: none;
 }
 @keyframes pathAnim{
 	0%{
@@ -61,17 +65,17 @@
 		stroke-dashoffset: 0;
 	}
 }
+
 [data-class="appear"]{
+	transition: 0.8s;
+}
+:not(.appear)[data-class="appear"]{
 	opacity: 0;
+	transform: translateX(-50%);
 }
 .appear{
-	animation: appear 0.8s;
-}
-@keyframes appear{
-	0%{
-		transform: translateX(-50%);
-		opacity: 0;
-	}
+	transform: translateX(0);
+	opacity: 1;
 }
 /***********************/
 /* Infos
