@@ -22,7 +22,7 @@ img{
 	padding: 20px;
 }
 .infoContent>.fermer{
-	position: absolute;
+	position: fixed;
 	top: 10px;
 	right: 10px;
 	cursor: pointer;
@@ -71,7 +71,7 @@ img{
 	display: table;
 }
 
-.infoContent>div:nth-child(3) {
+.infoContent>div:nth-child(4) {
 	background-image: url(../img/PlanMMI.svg);
 	background-position: 50% 100%;
 	background-size: contain;
@@ -153,8 +153,15 @@ img{
 /****************/
 
 #enseignement {
-	padding: 10px;
+	padding: 30px 10px;
 }
 #enseignement span{
 	display: block;
+}
+#enseignement>p{
+	margin: 0;
+}
+.small{
+	font-size: 12px;
+	
 }
