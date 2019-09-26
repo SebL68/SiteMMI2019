@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+
+		body>div{
+			//box-shadow: 0 3px 3px #424242;
+			padding: 20px;
+			border-radius: 20px;
+			border: 1px solid #CCC;
+			margin: 5px;
+		}
+		h3{
+			margin-top: 0;
+		}
+	</style>
+</head>
+<body>
+	
+	<script>
+		var output = "";
+		fetch("js/data.json")
+		.then(function(response){return response.json()})
+		.then(function(data){
+			data.forEach(function(groupes){
+				output += `
+					<div onclick="toggle(this, 'ouvrir')">
+						<h3>${groupes.titre}</h3>
+						<p>${groupes.description}</p>
+						<ul>
+					`;
+				groupes.matieres.forEach(function(matiere){
+					output += `
+						<li>
+							${matiere.matiere} ${matiere.heures}h
+							<p>${matiere.description}</p>
+						</li>
+					`;
+				});
+				output += `</ul></div>`;
+			})
+			document.body.innerHTML += output;
+		})
+	</script>
+</body>
+</html>

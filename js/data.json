@@ -1,0 +1,94 @@
+[
+	{
+		"titre": "Autres",
+		"description": "Cette catégorie regroupe l'ensemble des matières qui permettent aux étudiants d'acquerir une culture générale dans un ensemble de domaines qui leur seront professionnellement profitable. Les enseignements sont accés vers la communication digitale et la téchnique.",
+		"matieres": [
+			{
+				"matiere": "Anglais", 
+				"heures": 120,
+				"description": "L'apprentissage de l'anglais est basé sur la pratique de la langue."
+			},{
+				"matiere": "Allemand", 
+				"heures": 60,
+				"description": "La proximité de l'Allemagne et de la Suisse ancre l'Allemand comme une langue incontournable."
+			},{
+				"matiere": "Gestion de projet", 
+				"heures": 85,
+				"description": "Anticiper, planifier, gérer. L'organisation des projets ne s'improvise pas."
+			},{
+				"matiere": "Projet personnel et professionnel", 
+				"heures": 60,
+				"description": "L'étudiant est amené à se questionner sur ses capacités, ses envies et son avenir dans le monde professionnel."
+			},{
+				"matiere": "Environnement juridique économique et mercatique des organisations", 
+				"heures": 145,
+				"description": "Les techniques de commercialisation et le droit permettent aux étudiants d'envisager les projets d'un point de vu commercial en respectant les cadres légaux."
+			},{
+				"matiere": "Culture scientifique et traitement de l'information", 
+				"heures": 135,
+				"description": "L'ouverture d'esprit scientifique permet aux étudiants une ouverture d'esprit globale sur le monde numérique qui les entourent."
+			}
+		]
+	},
+	{
+		"titre": "Communication",
+		"description": "",
+		"matieres": [
+			{
+				"matiere": "Théories de l'information et de la communication", 
+				"heures": 100,
+				"description": ""
+			},{
+				"matiere": "Ecriture pour les médias numériques", 
+				"heures": 130,
+				"description": ""
+			},{
+				"matiere": "Communication, expression écrite et orale", 
+				"heures": 100,
+				"description": ""
+			}
+		]
+	},
+	{
+		"titre": "Multimédia",
+		"description": "",
+		"matieres": [
+			{
+				"matiere": "Esthétique et expression artistique", 
+				"heures": 125,
+				"description": ""
+			},{
+				"matiere": "Infographie", 
+				"heures": 135,
+				"description": ""
+			},{
+				"matiere": "Production audiovisuelle", 
+				"heures": 95,
+				"description": ""
+			}
+		]
+	},
+	{
+		"titre": "Web",
+		"description": "La création d'un site web requière de multiples compétences pour la réalisation des mises en pages, la programmation sur le navigateur ou le serveur, la gestion des bases de données et les différentes configurations.",
+		"matieres": [
+			{
+				"matiere": "Création de sites", 
+				"heures": 150,
+				"description": ""
+			},{
+				"matiere": "Programmation Web", 
+				"heures": 150,
+				"description": ""
+			},{
+				"matiere": "Bases de données", 
+				"heures": 65,
+				"description": ""
+			},{
+				"matiere": "Réseaux", 
+				"heures": 115,
+				"description": ""
+			}
+		]
+	}
+]

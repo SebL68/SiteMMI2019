@@ -41,13 +41,13 @@ lazy();
 /******************/
 /******************/
 /******************/
-window.addEventListener("load", function () {
-	if (window.matchMedia("(min-width: 1000px)").matches) {
-		prepare();
-	} else {
-		window.addEventListener("resize", prepare);
-	}
-});
+
+if (window.matchMedia("(min-width: 1000px)").matches) {
+	prepare();
+} else {
+	window.addEventListener("resize", prepare);
+}
+
 function prepare() {
 	window.removeEventListener("resize", prepare);
 
