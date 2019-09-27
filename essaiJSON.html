@@ -17,9 +17,20 @@
 		h3{
 			margin-top: 0;
 		}
+		ul{
+			display: flex;
+			flex-direction: column;
+		}
+		li{
+			max-height: 0px;
+			transition: 0.4s;
+		}
+		ul:hover>li{
+			max-height: 200px;
+		}
 	</style>
 </head>
-<body>
+<body contenteditable="//true" spellcheck="true">
 	
 	<script>
 		var output = "";
