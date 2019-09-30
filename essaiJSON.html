@@ -8,7 +8,7 @@
 	<style>
 
 		body>div{
-			//box-shadow: 0 3px 3px #424242;
+			box-shadow: 0 3px 3px #AAA;
 			padding: 20px;
 			border-radius: 20px;
 			border: 1px solid #CCC;
@@ -22,11 +22,12 @@
 			flex-direction: column;
 		}
 		li{
-			max-height: 0px;
 			transition: 0.4s;
+			overflow: hidden;
+			flex: 0 1 1px;
 		}
-		ul:hover>li{
-			max-height: 200px;
+		div:hover li{
+			flex: 1 1 auto;
 		}
 	</style>
 </head>
