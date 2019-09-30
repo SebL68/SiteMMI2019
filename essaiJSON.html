@@ -108,7 +108,7 @@
 	</style>
 </head>
 <body contenteditable="//true" spellcheck="true">
-	
+	<h1>DUT MMI Mulhouse ~ 1800h en 2 ans</h1>
 	<script>
 		var output = "";
 		fetch("js/data.json")
@@ -149,6 +149,9 @@
 		})
 
 		function toggle(target, className) {
+			document.querySelectorAll("div.ouvrir").forEach(function(e){
+				e.classList.toggle("ouvrir");
+			});
 			if(typeof(target) == "string"){
 				var obj = document.querySelectorAll(target);
 			}else{
