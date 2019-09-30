@@ -6,28 +6,96 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<style>
-
+		body{
+			font-family: arial;
+			max-width: 1000px;
+			margin: auto;
+		}
 		body>div{
 			box-shadow: 0 3px 3px #AAA;
 			padding: 20px;
 			border-radius: 20px;
 			border: 1px solid #CCC;
 			margin: 5px;
+			overflow: hidden;
+			position: relative;
+			transition: 0.4s;
 		}
 		h3{
 			margin-top: 0;
 		}
 		ul{
-			display: none;
+			position: absolute;
+			opacity: 0;
+			padding: 0;
 		}
 		li{
 			transition: 0.4s;
-			overflow: hidden;
+			opacity: 0;
+			transform: translateX(-50px);
+			list-style-type: none;
+		}
+		.ouvrir{
+			transform: translateX(-50px);
+		}
+		.ouvrir ul{
+			position: static;
+			opacity: 1;
+		}
+		.ouvrir li{
+			opacity: 1;
+			transform: translateX(0);
+		}
+		li>div{
+			display: flex;
+			justify-content: space-between;
+			background: linear-gradient(45deg, purple, blue);
+			color: #FFF;
+			padding: 20px;
+			border-radius: 10px;
+			margin-bottom: 5px;
+		}
+		li p{
+			margin-left: 20px;
+			display: none;
+		}
+		.ouvrir li:nth-child(1){transition-delay: 0.1s}
+		.ouvrir li:nth-child(2){transition-delay: 0.2s}
+		.ouvrir li:nth-child(3){transition-delay: 0.3s}
+		.ouvrir li:nth-child(4){transition-delay: 0.4s}
+		.ouvrir li:nth-child(5){transition-delay: 0.5s}
+		.ouvrir li:nth-child(6){transition-delay: 0.6s}
+
+		.deco{
+			pointer-events: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			border: 4px solid;
+			border-radius: 20px;
+			box-sizing: border-box;
+			clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+		}
+		.ouvrir .deco{
+			animation: ouverture 2s forwards;
+		}
+		@keyframes ouverture{
+			 0%{clip-path: polygon(0 0, 20px 0, 20px 0, 20px 0, 0 0)}
+			25%{clip-path: polygon(0 0, 20px 0, 20px 100%, 20px 100%, 0 100%)}
+			50%{clip-path: polygon(0 0, 20px 0, 100% 100%, 100% 100%, 0 100%)}
+			75%{clip-path: polygon(0 0, 20px 0, 100% 0, 100% 100%, 0 100%)}
+			100%{clip-path: polygon(0 0, 20px 0, 100% 0, 100% 100%, 0 100%)}
+
 		}
 
+		li.ouvrir p{
+			display: block;
+		}
 	</style>
 </head>
-<body contenteditable="//true" spellcheck="true">
+<body contenteditable="true" spellcheck="true">
 	
 	<script>
 		var output = "";
@@ -36,20 +104,34 @@
 		.then(function(data){
 			data.forEach(function(groupes){
 				output += `
-					<div onclick="toggle(this, 'ouvrir')">
-						<h3>${groupes.titre}</h3>
+					<div>
+						<div class=deco></div>
+						<h3>
+							${groupes.titre}
+							<button onclick="toggle(this.parentElement.parentElement, 'ouvrir')">En savoir plus</button>
+						</h3>
 						<p>${groupes.description}</p>
 						<ul>
 					`;
 				groupes.matieres.forEach(function(matiere){
 					output += `
-						<li>
-							${matiere.matiere} ${matiere.heures}h
-							<p>${matiere.description}</p>
-						</li>
+							<li>
+								<div>
+									<div>
+										${matiere.matiere}
+										<button onclick="toggle(this.parentElement.parentElement.parentElement, 'ouvrir')">En savoir plus</button>
+									</div>
+									<div>
+										${matiere.heures}h
+									</div>
+								</div>
+								<p>${matiere.description}</p>
+							</li>
 					`;
 				});
-				output += `</ul></div>`;
+				output += `
+						</ul>
+					</div>`;
 			})
 			document.body.innerHTML += output;
 		})
@@ -58,9 +140,9 @@
 			if(typeof(target) == "string"){
 				var obj = document.querySelectorAll(target);
 			}else{
-				var obj = target;
+				var obj = [target];
 			}
-			document.querySelectorAll(target).forEach(function (e) {
+			obj.forEach(function (e) {
 				e.classList.toggle(className);
 			});
 		}

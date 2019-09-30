@@ -1,6 +1,67 @@
 [
 	{
-		"titre": "Autres",
+		"titre": "~330h Communication",
+		"description": "Une bonne communication est essentielle dans les entreprises, l'enseignement est basé sur les techniques écrites et orales.",
+		"matieres": [
+			{
+				"matiere": "Théories de l'information et de la communication", 
+				"heures": 100,
+				"description": ""
+			},{
+				"matiere": "Ecriture pour les médias numériques", 
+				"heures": 130,
+				"description": ""
+			},{
+				"matiere": "Communication, expression écrite et orale", 
+				"heures": 100,
+				"description": ""
+			}
+		]
+	},
+	{
+		"titre": "~350h Multimédia",
+		"description": "L'application de la communication passe par la réalisation de montages numériques pour la réalisation de banderoles ou flyers ainsi que par la réalisation de clips vidéos.",
+		"matieres": [
+			{
+				"matiere": "Esthétique et expression artistique", 
+				"heures": 125,
+				"description": ""
+			},{
+				"matiere": "Infographie", 
+				"heures": 135,
+				"description": ""
+			},{
+				"matiere": "Production audiovisuelle", 
+				"heures": 95,
+				"description": ""
+			}
+		]
+	},
+	{
+		"titre": "~480h Web",
+		"description": "Toutes les entreprises possèdent un site web. Les étudiants du DUT MMI sont formés à l'utilisation de CMS mais également à la création de sites web. Cette création requière de multiples compétences pour la réalisation des mises en pages, la programmation sur le navigateur (JavaScript) ou le serveur (PHP), la gestion des bases de données (MySQL) et les différentes configurations, etc.",
+		"matieres": [
+			{
+				"matiere": "Création de sites", 
+				"heures": 150,
+				"description": "L'utilisation poussée de l'HTML et du CSS permet aux étudiants de créer les mises en pages souhaitées, avec notamment l'utilisation de techniques modernes comme le flex et le grid. Ils apprennent à rendre un site web reponsive et à y faire des animations interactives. Au semestre 4, ils vont plus loin avec l'optimisation technique des sites. L'étudiant apprend également à utiliser Wordpress avec les pluggins les plus courants afin de créer leur portfolio."
+			},{
+				"matiere": "Programmation Web", 
+				"heures": 150,
+				"description": "La programmation JavaScript et PHP permettent de rentre les sites interactifs et dynamique. Les logiques algorithmiques sont ici misent en oeuvre."
+			},{
+				"matiere": "Bases de données", 
+				"heures": 65,
+				"description": ""
+			},{
+				"matiere": "Réseaux", 
+				"heures": 115,
+				"description": ""
+			}
+		]
+	},
+	{
+		"titre": "~600h Autres",
 		"description": "Cette catégorie regroupe l'ensemble des matières qui permettent aux étudiants d'acquérir une culture générale dans un ensemble de domaines qui leur seront professionnellement profitable. Les enseignements sont axés vers la communication digitale et la technique.",
 		"matieres": [
 			{
@@ -26,68 +87,7 @@
 			},{
 				"matiere": "Culture scientifique et traitement de l'information", 
 				"heures": 135,
-				"description": "L'ouverture d'esprit scientifique permet aux étudiants une ouverture d'esprit globale sur le monde numérique qui les entourent."
-			}
-		]
-	},
-	{
-		"titre": "Communication",
-		"description": "",
-		"matieres": [
-			{
-				"matiere": "Théories de l'information et de la communication", 
-				"heures": 100,
-				"description": ""
-			},{
-				"matiere": "Ecriture pour les médias numériques", 
-				"heures": 130,
-				"description": ""
-			},{
-				"matiere": "Communication, expression écrite et orale", 
-				"heures": 100,
-				"description": ""
-			}
-		]
-	},
-	{
-		"titre": "Multimédia",
-		"description": "",
-		"matieres": [
-			{
-				"matiere": "Esthétique et expression artistique", 
-				"heures": 125,
-				"description": ""
-			},{
-				"matiere": "Infographie", 
-				"heures": 135,
-				"description": ""
-			},{
-				"matiere": "Production audiovisuelle", 
-				"heures": 95,
-				"description": ""
-			}
-		]
-	},
-	{
-		"titre": "Web",
-		"description": "La création d'un site web requière de multiples compétences pour la réalisation des mises en pages, la programmation sur le navigateur ou le serveur, la gestion des bases de données et les différentes configurations.",
-		"matieres": [
-			{
-				"matiere": "Création de sites", 
-				"heures": 150,
-				"description": ""
-			},{
-				"matiere": "Programmation Web", 
-				"heures": 150,
-				"description": ""
-			},{
-				"matiere": "Bases de données", 
-				"heures": 65,
-				"description": ""
-			},{
-				"matiere": "Réseaux", 
-				"heures": 115,
-				"description": ""
+				"description": "L'ouverture d'esprit scientifique permet aux étudiants de comprendre le monde numérique qui les entoure."
 			}
 		]
 	}

@@ -8,7 +8,12 @@ document.querySelectorAll('[rel="preload"][as="style"]').forEach(function (e) {
 
 /********************/
 function toggle(target, className) {
-	document.querySelectorAll(target).forEach(function (e) {
+	if(typeof(target) == "string"){
+		var obj = document.querySelectorAll(target);
+	}else{
+		var obj = [target];
+	}
+	obj.forEach(function (e) {
 		e.classList.toggle(className);
 	});
 }
