@@ -10,6 +10,7 @@
 			font-family: arial;
 			max-width: 1000px;
 			margin: auto;
+
 		}
 		body>div{
 			box-shadow: 0 3px 3px #AAA;
@@ -120,7 +121,7 @@
 						<div class=deco></div>
 						<h3>
 							${groupes.titre}
-							<button onclick="toggle(this.parentElement.parentElement, 'ouvrir')">En savoir plus</button>
+							<button onclick="closeMenu();toggle(this.parentElement.parentElement, 'ouvrir')">En savoir plus</button>
 						</h3>
 						<p>${groupes.description}</p>
 						<ul>
@@ -148,10 +149,12 @@
 			document.body.innerHTML += output;
 		})
 
-		function toggle(target, className) {
-			/*document.querySelectorAll("div.ouvrir").forEach(function(e){
+		function closeMenu(){
+			document.querySelectorAll("div.ouvrir").forEach(function(e){
 				e.classList.toggle("ouvrir");
-			});*/
+			});
+		}
+		function toggle(target, className) {
 			if(typeof(target) == "string"){
 				var obj = document.querySelectorAll(target);
 			}else{
