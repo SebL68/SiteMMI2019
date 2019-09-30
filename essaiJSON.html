@@ -18,17 +18,13 @@
 			margin-top: 0;
 		}
 		ul{
-			display: flex;
-			flex-direction: column;
+			display: none;
 		}
 		li{
 			transition: 0.4s;
 			overflow: hidden;
-			flex: 0 1 1px;
 		}
-		div:hover li{
-			flex: 1 1 auto;
-		}
+
 	</style>
 </head>
 <body contenteditable="//true" spellcheck="true">
@@ -57,6 +53,17 @@
 			})
 			document.body.innerHTML += output;
 		})
+
+		function toggle(target, className) {
+			if(typeof(target) == "string"){
+				var obj = document.querySelectorAll(target);
+			}else{
+				var obj = target;
+			}
+			document.querySelectorAll(target).forEach(function (e) {
+				e.classList.toggle(className);
+			});
+		}
 	</script>
 </body>
 </html>
