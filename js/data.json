@@ -44,7 +44,7 @@
 			{
 				"matiere": "Création de sites", 
 				"heures": 150,
-				"description": "L'utilisation poussée de l'HTML et du CSS permet aux étudiants de créer les mises en pages souhaitées, avec notamment l'utilisation de techniques modernes comme le flex et le grid. Ils apprennent à rendre un site web reponsive et à y faire des animations interactives. Au semestre 4, ils vont plus loin avec l'optimisation technique des sites. L'étudiant apprend également à utiliser Wordpress avec les pluggins les plus courants afin de créer leur portfolio."
+				"description": "L'utilisation poussée de l'HTML et du CSS permet aux étudiants de créer les mises en pages souhaitées, avec notamment l'utilisation de techniques modernes comme le flex et le grid. Ils apprennent à adapter le site sur smartphone et à y faire des animations interactives. Au semestre 4, ils vont plus loin avec l'optimisation technique des sites. L'étudiant apprend également à utiliser Wordpress avec les pluggins les plus courants afin de créer leur portfolio."
 			},{
 				"matiere": "Programmation Web", 
 				"heures": 150,
@@ -56,7 +56,7 @@
 			},{
 				"matiere": "Réseaux", 
 				"heures": 115,
-				"description": ""
+				"description": "Le cours de réseaux permet à des étudiants, sans connaissances préalables, de découvrir les principes fondamentaux de la communication entre les ordinateurs au sein d'un réseau local. La suite de ce cours aborde l'administration et la sécurité au niveau de réseaux mis en œuvre dans des petites entreprises. Enfin, les étudiants apprennent à installer et à configurer des serveurs web."
 			}
 		]
 	},
