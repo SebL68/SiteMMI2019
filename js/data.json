@@ -29,11 +29,11 @@
 			},{
 				"matiere": "Infographie", 
 				"heures": 135,
-				"description": ""
+				"description": "<p>L’infographie est à la base de tout document graphique numérique. Il permet la composition d’images réelles et/ou de synthèse (virtuelles) tant dans le monde de l’édition (affiche, plaquettes, flyers, cartes de visites…) que dans le monde virtuel de l’Internet (sites Web, pages FaceBook, …).</p><p>Des images animées (2D ou 3D) ou du « motion design » peuvent également être créés via l’infographie.</p><p>Photoshop - logiciel de retouche d’images - et Illustrator – logiciel de création d’images vectorielles – sont les applications 2D les plus rependus pour l’infographie 2D. L’animation 3D est proposée via le logiciel 3DSMAX.</p><p>Quoiqu’il en soit, il faut absolument soigner son image…</p>"
 			},{
 				"matiere": "Production audiovisuelle", 
 				"heures": 95,
-				"description": ""
+				"description": "La communication passe aujourd'hui de plus en plus par la vidéo : apprendre à écrire des scénarios de publicité, d'une fiction, monter un dossier de production permettra ensuite aux étudiants de se familiariser avec la prise de vue et la prise de son (utilisation de caméras et d'enregistreurs numériques) avec du matériel semi-professionnel. Le montage avec des logiciels professionnels assure une bonne maîtrise de toutes les étapes de la production audiovisuelle."
 			}
 		]
 	},

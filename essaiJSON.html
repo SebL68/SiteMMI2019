@@ -121,7 +121,7 @@
 						<div class=deco></div>
 						<h3>
 							${groupes.titre}
-							<button onclick="closeMenu();toggle(this.parentElement.parentElement, 'ouvrir')">En savoir plus</button>
+							<button onclick="closeMenu(this);toggle(this.parentElement.parentElement, 'ouvrir')">En savoir plus</button>
 						</h3>
 						<p>${groupes.description}</p>
 						<ul>
@@ -149,9 +149,10 @@
 			document.body.innerHTML += output;
 		})
 
-		function closeMenu(){
+		function closeMenu(obj){
 			document.querySelectorAll("div.ouvrir").forEach(function(e){
-				e.classList.toggle("ouvrir");
+				if(e != obj.parentElement.parentElement)
+					e.classList.toggle("ouvrir");
 			});
 		}
 		function toggle(target, className) {
