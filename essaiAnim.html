@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        text{
+            fill: red;
+            stroke: blue;
+            stroke-width: 5px;
+            font-size: 48px;
+            font-weight: 900;
+            font-family: Arial, Helvetica, sans-serif;
+            stroke-dasharray: 5px;
+        }
+    </style>
+</head>
+<body>
+    <svg width=460 height=60>
+        <text y=45 pathLength=100>DUT MMI Mulhouse</text>
+    </svg>
+
+    <script>
+        function delay(tps){
+            return new Promise(resolve => setTimeout(resolve, tps));
+        }
+
+       /* delay(1000).then(() => console.log('ok'))
+        .then(() => console.log('ok2'));*/
+
+        (()=>{console.log('okk');return delay(1000)})
+        .then(() => {console.log('ok')})
+
+    </script>
+</body>
+</html>
