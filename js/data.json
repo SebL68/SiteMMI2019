@@ -10,7 +10,7 @@
 			},{
 				"matiere": "Ecriture pour les médias numériques", 
 				"heures": 130,
-				"description": ""
+				"description": "<p>L'écriture de textes pour le web, pour les réseaux sociaux, pour la création de vidéo n'est pas la même que pour des médias \"traditionnels\" comme le papier.</p><p>L'étudiant apprendra ici les bonnes pratiques pour optimiser le référencement, l'écriture de scénarios, etc.</p>"
 			},{
 				"matiere": "Communication, expression écrite et orale", 
 				"heures": 100,
@@ -29,7 +29,7 @@
 			},{
 				"matiere": "Infographie", 
 				"heures": 135,
-				"description": "<p>L’infographie est à la base de tout document graphique numérique. Elle permet la composition d’images réelles et/ou de synthèse (virtuelles) tant dans le monde de l’édition (affiche, plaquettes, flyers, cartes de visites…) que dans le monde virtuel de l’Internet (sites Web, pages FaceBook, …).</p><p>Des images animées (2D ou 3D) ou du « motion design » peuvent également être créées via l’infographie.</p><p>Photoshop - logiciel de retouche d’images - et Illustrator – logiciel de création d’images vectorielles – sont les applications 2D les plus répandues pour l’infographie 2D. L’animation 3D est proposée via le logiciel 3DSMAX.</p><p>Quoiqu’il en soit, il faut absolument soigner son image…</p>"
+				"description": "<p>L’infographie est à la base de tout document graphique numérique. Elle permet la composition d’images réelles et/ou de synthèse (virtuelles) tant dans le monde de l’édition (affiche, plaquettes, flyers, cartes de visites…) que dans le monde virtuel de l’Internet (sites Web, pages Facebook, …).</p><p>Des images animées (2D ou 3D) ou du « motion design » peuvent également être créées via l’infographie.</p><p>Photoshop - logiciel de retouche d’images - et Illustrator – logiciel de création d’images vectorielles – sont les applications 2D les plus répandues pour l’infographie 2D. L’animation 3D est proposée via le logiciel 3DSMAX.</p><p>Quoiqu’il en soit, il faut absolument soigner son image…</p>"
 			},{
 				"matiere": "Production audiovisuelle", 
 				"heures": 95,
@@ -48,11 +48,11 @@
 			},{
 				"matiere": "Programmation Web", 
 				"heures": 150,
-				"description": "La programmation JavaScript et PHP permettent de rendre les sites interactifs et dynamique. Les logiques algorithmiques sont ici misent en oeuvre."
+				"description": "La programmation JavaScript et PHP permettent de rendre les sites interactifs et dynamique, c'est à dire, d'adapter le contenu à la personne et à ses interactions. Les logiques algorithmiques sont ici misent en oeuvre."
 			},{
 				"matiere": "Bases de données", 
 				"heures": 65,
-				"description": ""
+				"description": "<p>Les bases de données contiennent de nombreuses informations : identifiants, mots de passes, articles, etc.</p><p>L'analyse préalable à la création des bases de données permet de comprendre le besoin et de l'exprimer à l'aide de diagrammes. En lien avec la programmation, la gestion des bases de données permet de créer une grande partie des sites actuels."
 			},{
 				"matiere": "Réseaux", 
 				"heures": 115,
@@ -83,7 +83,7 @@
 			},{
 				"matiere": "Environnement Juridique Économique et Mercatique des organisations", 
 				"heures": 145,
-				"description": "<p>En EJEM, les étudiants apprendront à comprendre et maîtriser les fondamentaux d'une démarche marketing en vu de commercialiser un bien ou un service (site web etc...). Ils verront la nécessité d'étudier sa cible pour définir un positionnement sur son marché cible. Ils apprendront à définir une stratégie de prix et fixer un prix de vente, à élaborer une stratégie de distribution et de communication efficace pour vendre ou capter une audience.</p><p>Nous étudierons également en spécialisation l'art de la négociation commerciale afin de savoir convaincre et persuader son prospect d'acheter votre produit ou service.</p><p>Ils aborderont aussi les notions juridiques nécessaires lors de l'établissement d'un contrat (prestation ou autre), à se familiariser avec les notions juridiques liées au digital (liberté d'expression en ligne, droits d'auteur et de marque, la publicité en ligne etc...).</p><p>Enfin, ils appréhenderont la culture d'entreprise, la compréhension de son environnement en vue d'établir une ou des stratégies qui permettent aux organisations d'être efficiente et plus compétitives.</p>"
+				"description": "<p>En EJEM, les étudiants apprendront à comprendre et maîtriser les fondamentaux d'une démarche marketing en vue de commercialiser un bien ou un service (site web etc...). Ils verront la nécessité d'étudier sa cible pour définir un positionnement sur son marché cible. Ils apprendront à définir une stratégie de prix et fixer un prix de vente, à élaborer une stratégie de distribution et de communication efficace pour vendre ou capter une audience.</p><p>Nous étudierons également en spécialisation l'art de la négociation commerciale afin de savoir convaincre et persuader son prospect d'acheter votre produit ou service.</p><p>Ils aborderont aussi les notions juridiques nécessaires lors de l'établissement d'un contrat (prestation ou autre), à se familiariser avec les notions juridiques liées au digital (liberté d'expression en ligne, droits d'auteur et de marque, la publicité en ligne etc...).</p><p>Enfin, ils appréhenderont la culture d'entreprise, la compréhension de son environnement en vue d'établir une ou des stratégies qui permettent aux organisations d'être efficiente et plus compétitives.</p>"
 			},{
 				"matiere": "Culture scientifique et traitement de l'information", 
 				"heures": 135,
