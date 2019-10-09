@@ -114,7 +114,7 @@
 	<h1>DUT MMI Mulhouse ~ 1800h en 2 ans</h1>
 	<script>
 		var output = "";
-		fetch("js/data.json")
+		fetch("js/data.json", {cache: "no-store"})
 		.then(function(response){return response.json()})
 		.then(function(data){
 			data.forEach(function(groupes){
