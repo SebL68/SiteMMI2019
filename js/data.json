@@ -6,7 +6,7 @@
 			{
 				"matiere": "Théories de l'information et de la communication", 
 				"heures": 100,
-				"description": ""
+				"description": "<p>Au début de la première année, vous envisagerez les principales théories communicationnelles de l’Antiquité jusqu’au XXe siècle. En effet, l’exercice efficace de la communication requiert de comprendre les différentes théories sur le sujet. On constate ainsi qu’internet ne constitue pas seulement une rupture mais aussi, par bien des aspects, une continuité dans l’histoire des médias. Un volet est consacré à la théorie des organisations (entreprises, institutions, etc.). La spécificité de l’IUT de Mulhouse est de se concentrer ensuite sur la théorie de la communication numérique dans ses développements les plus récents. Vous apprendrez à considérer l’outil avec distance, en voyant tout à la fois ses enjeux, ses dangers et ses opportunités.</p><p>L’écriture numérique est une pratique à la frontière de l’écriture en tant que savoir-faire (qui n’est pas enseigné au lycée en France) et des techniques associées aux médias numériques. Les cours sont variables et souvent en fonction de l’actualité, ils visent à adapter son écriture aux différents supports et aux attentes des lecteurs en ligne, ainsi qu’à renforcer la visibilité des contenus sur les moteurs de recherche par un référencement dont il s’agit de comprendre qu’il n’a rien de naturel. Écrire pour le web correspond à des formats différents (réseaux sociaux, blogs, sites institutionnels ou commerciaux, etc.), mais aussi à des impératifs semblables de brièveté et d’efficacité. Si dans l’UE2 vous apprenez à coder, dans l’UE1 vous apprenez à décoder le monde numérique et à écrire efficacement.</p>"
 			},{
 				"matiere": "Ecriture pour les médias numériques", 
 				"heures": 130,
@@ -14,7 +14,7 @@
 			},{
 				"matiere": "Communication, expression écrite et orale", 
 				"heures": 100,
-				"description": ""
+				"description": "Un bon professionnel doit pouvoir s'exprimer avec aisance à l'oral comme à l'écrit. C'est par le biais de travaux académiques et professionnels que les étudiants s'entraînent durant les deux années de DUT."
 			}
 		]
 	},
@@ -33,7 +33,7 @@
 			},{
 				"matiere": "Production audiovisuelle", 
 				"heures": 95,
-				"description": "La communication passe aujourd'hui de plus en plus par la vidéo : apprendre à écrire des scénarios de publicité, d'une fiction, monter un dossier de production permettra ensuite aux étudiants de se familiariser avec la prise de vue et la prise de son (utilisation de caméras et d'enregistreurs numériques) avec du matériel semi-professionnel. Le montage avec des logiciels professionnels assure une bonne maîtrise de toutes les étapes de la production audiovisuelle."
+				"description": "La communication passe aujourd'hui de plus en plus par la vidéo : apprendre à écrire des scénarios de publicité, d'une fiction, monter un dossier de production permettra ensuite aux étudiants de se familiariser avec la prise de vue et la prise de son (utilisation de caméras, d'enregistreurs numériques, gestion de l'éclairage, utilisation d'une cabine insonorisée, d'un fond vert) avec du matériel semi-professionnel. Développer sa créativité avec des logiciels de modélisation 3D (3Ds max), monter ses prises de vue avec des logiciels professionnels (Adobe Premiere Pro et After Effects), intégrer des sons de qualité avec Cubase, assure une bonne maîtrise de toutes les étapes de la production audiovisuelle."
 			}
 		]
 	},
