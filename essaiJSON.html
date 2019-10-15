@@ -8,11 +8,15 @@
 	<style>
 		body{
 			font-family: arial;
+		}
+
+
+
+		#enseignement{
 			max-width: 1000px;
 			margin: auto;
-
 		}
-		body>div{
+		#enseignement>div{
 			box-shadow: 0 3px 3px #AAA;
 			padding: 20px;
 			border-radius: 20px;
@@ -22,21 +26,21 @@
 			position: relative;
 			transition: 0.4s;
 		}
-		h3{
+		#enseignement h3{
 			margin-top: 0;
 		}
-		ul{
+		#enseignement ul{
 			position: absolute;
 			opacity: 0;
 			padding: 0;
 		}
-		li{
+		#enseignement li{
 			transition: 0.4s;
 			opacity: 0;
 			transform: translateX(-50px);
 			list-style-type: none;
 		}
-		button{
+		#enseignement button{
 			border: none;
 			background: linear-gradient(45deg, purple, blue);
 			cursor: pointer;
@@ -44,24 +48,24 @@
 			padding: 10px;
 			border-radius: 10px;
 		}
-		li button{
+		#enseignement li button{
 			background: #FFF;
 			color: #000;
 		}
 		@media screen and (min-width: 1100px){
-			.ouvrir{
+			#enseignement .ouvrir{
 				transform: translateX(-50px);
 			}
 		}
-		.ouvrir ul{
+		#enseignement .ouvrir ul{
 			position: static;
 			opacity: 1;
 		}
-		.ouvrir li{
+		#enseignement .ouvrir li{
 			opacity: 1;
 			transform: translateX(0);
 		}
-		li>div{
+		#enseignement li>div{
 			display: flex;
 			justify-content: space-between;
 			background: linear-gradient(45deg, purple, blue);
@@ -70,18 +74,18 @@
 			border-radius: 10px;
 			margin-bottom: 5px;
 		}
-		li p{
+		#enseignement li p{
 			margin-left: 20px;
 			display: none;
 		}
-		.ouvrir li:nth-child(1){transition-delay: 0.1s}
-		.ouvrir li:nth-child(2){transition-delay: 0.2s}
-		.ouvrir li:nth-child(3){transition-delay: 0.3s}
-		.ouvrir li:nth-child(4){transition-delay: 0.4s}
-		.ouvrir li:nth-child(5){transition-delay: 0.5s}
-		.ouvrir li:nth-child(6){transition-delay: 0.6s}
+		#enseignement .ouvrir li:nth-child(1){transition-delay: 0.1s}
+		#enseignement .ouvrir li:nth-child(2){transition-delay: 0.2s}
+		#enseignement .ouvrir li:nth-child(3){transition-delay: 0.3s}
+		#enseignement .ouvrir li:nth-child(4){transition-delay: 0.4s}
+		#enseignement .ouvrir li:nth-child(5){transition-delay: 0.5s}
+		#enseignement .ouvrir li:nth-child(6){transition-delay: 0.6s}
 
-		.deco{
+		#enseignement .deco{
 			pointer-events: none;
 			position: absolute;
 			top: 0;
@@ -93,7 +97,7 @@
 			box-sizing: border-box;
 			clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 		}
-		.ouvrir .deco{
+		#enseignement .ouvrir .deco{
 			animation: ouverture 2s forwards;
 		}
 		@keyframes ouverture{
@@ -105,13 +109,16 @@
 
 		}
 
-		li.ouvrir p{
+		#enseignement li.ouvrir p{
 			display: block;
 		}
 	</style>
 </head>
 <body contenteditable="//true" spellcheck="true">
-	<h1>DUT MMI Mulhouse ~ 1800h en 2 ans</h1>
+	<section id=enseignement>
+		<h2>DUT MMI Mulhouse ~ 1800h en 2 ans</h2>
+
+	</section>
 	<script>
 		var output = "";
 		fetch("js/data.json", {cache: "no-store"})
@@ -123,7 +130,7 @@
 						<div class=deco></div>
 						<h3>
 							${groupes.titre}
-							<button onclick="closeMenu(this);toggle(this.parentElement.parentElement, 'ouvrir')">En savoir plus</button>
+							<button onclick="menu(this)">En savoir plus</button>
 						</h3>
 						<p>${groupes.description}</p>
 						<ul>
@@ -148,9 +155,14 @@
 						</ul>
 					</div>`;
 			})
-			document.body.innerHTML += output;
+			document.querySelector("#enseignement").innerHTML += output;
 		})
-
+		function menu(obj){
+			closeMenu(obj);
+			var menu = obj.parentElement.parentElement;
+			toggle(menu, 'ouvrir');
+			menu.scrollIntoView({behavior: 'smooth'});
+		}
 		function closeMenu(obj){
 			document.querySelectorAll("div.ouvrir").forEach(function(e){
 				if(e != obj.parentElement.parentElement)

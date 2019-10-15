@@ -44,7 +44,7 @@
 			{
 				"matiere": "Création de sites", 
 				"heures": 150,
-				"description": "L'utilisation poussée de l'HTML et du CSS permet aux étudiants de créer les mises en pages souhaitées, avec notamment l'utilisation de techniques modernes comme le flex et le grid. Ils apprennent à adapter le site sur smartphone et à y faire des animations interactives. Au semestre 4, ils vont plus loin avec l'optimisation technique des sites. L'étudiant apprend également à utiliser Wordpress avec les pluggins les plus courants afin de créer leur portfolio."
+				"description": "L'utilisation poussée de l'HTML et du CSS permet aux étudiants de créer les mises en pages souhaitées. Ils apprennent à adapter le site sur smartphone et à y faire des animations interactives. Au semestre 4, ils vont plus loin avec l'optimisation technique des sites. L'étudiant apprend également à utiliser Wordpress avec les pluggins les plus courants afin de créer leur portfolio."
 			},{
 				"matiere": "Programmation Web", 
 				"heures": 150,
@@ -83,7 +83,7 @@
 			},{
 				"matiere": "Environnement Juridique Économique et Mercatique des organisations", 
 				"heures": 145,
-				"description": "<p>En EJEM, les étudiants apprendront à comprendre et maîtriser les fondamentaux d'une démarche marketing en vue de commercialiser un bien ou un service (site web etc...). Ils verront la nécessité d'étudier sa cible pour définir un positionnement sur son marché cible. Ils apprendront à définir une stratégie de prix et fixer un prix de vente, à élaborer une stratégie de distribution et de communication efficace pour vendre ou capter une audience.</p><p>Nous étudierons également en spécialisation l'art de la négociation commerciale afin de savoir convaincre et persuader son prospect d'acheter votre produit ou service.</p><p>Ils aborderont aussi les notions juridiques nécessaires lors de l'établissement d'un contrat (prestation ou autre), à se familiariser avec les notions juridiques liées au digital (liberté d'expression en ligne, droits d'auteur et de marque, la publicité en ligne etc...).</p><p>Enfin, ils appréhenderont la culture d'entreprise, la compréhension de son environnement en vue d'établir une ou des stratégies qui permettent aux organisations d'être efficiente et plus compétitives.</p>"
+				"description": "<p>En EJEM, les étudiants apprendront à comprendre et maîtriser les fondamentaux d'une démarche marketing en vue de commercialiser un bien ou un service (site web etc...). Ils verront la nécessité d'étudier sa cible pour définir un positionnement sur son marché cible. Ils apprendront à définir une stratégie de prix et fixer un prix de vente, à élaborer une stratégie de distribution et de communication efficace pour vendre ou capter une audience.</p><p>Ils étudieront également en spécialisation l'art de la négociation commerciale afin de savoir convaincre et persuader son prospect d'acheter votre produit ou service.</p><p>Ils aborderont aussi les notions juridiques nécessaires lors de l'établissement d'un contrat (prestation ou autre), à se familiariser avec les notions juridiques liées au digital (liberté d'expression en ligne, droits d'auteur et de marque, la publicité en ligne etc...).</p><p>Enfin, ils appréhenderont la culture d'entreprise, la compréhension de son environnement en vue d'établir une ou des stratégies qui permettent aux organisations d'être efficiente et plus compétitives.</p>"
 			},{
 				"matiere": "Culture scientifique et traitement de l'information", 
 				"heures": 135,

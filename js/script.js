@@ -18,6 +18,22 @@ function toggle(target, className) {
 	});
 }
 /********************/
+/* Gérer le menu de cours */
+/*******************/
+function menu(obj){
+	closeMenu(obj);
+	var menu = obj.parentElement.parentElement;
+	toggle(menu, 'ouvrir');
+	menu.scrollIntoView({behavior: 'smooth'});
+}
+function closeMenu(obj){
+	document.querySelectorAll("div.ouvrir").forEach(function(e){
+		if(e != obj.parentElement.parentElement)
+			e.classList.toggle("ouvrir");
+	});
+}
+
+/********************/
 /* Gérer le retour */
 /*******************/
 window.addEventListener("popstate", function () {
