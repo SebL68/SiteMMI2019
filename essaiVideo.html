@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        video{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video controls data-videosrc="videos/pub_conserve_FestivalMMI_"></video> 
+
+    <script>
+        window.addEventListener("resize", videoSize)
+        function videoSize(){
+            document.querySelectorAll("video").forEach(function(e){
+                var width = e.getBoundingClientRect().width;
+                if(width < 427){
+                    var size = 240;
+                } else if(width < 854){
+                    var size = 480;
+                } else if(width < 1280){
+                    var size = 720;
+                } else {
+                    var size = 1080;
+                }
+               
+                if(size != e.dataset.size){
+                    e.dataset.size = size;
+                    e.src = e.dataset.videosrc + size + ".mp4";
+                }
+            })
+        }
+        videoSize();
+    </script>
+</body>
+</html>
