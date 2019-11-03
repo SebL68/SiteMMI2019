@@ -142,15 +142,15 @@
 	font-size: 28px;
 }
 
-.quinconce>div {
+.quinconce>a {
 	flex: 1;
 	margin: 100px 3% 100px 3%;
 	padding: 20px;
 	animation: pioupiou 0.4s alternate infinite;
-	transition: background 0.2s;
+	transition: background-color 0.2s;
 }
 
-.quinconce>div:hover {
+.quinconce>a:hover {
 	background: rgba(0, 0, 255, 0.1);
 }
 

@@ -184,10 +184,10 @@ window.addEventListener("load", ()=>{
 		new CurveSVG(
 			{
 				from: ".depart .barre:nth-child(1)",
-				to: ".quinconce>div:nth-child(1)>div",
+				to: ".quinconce>a:nth-child(1)>div",
 				style: "line",
 				observe: [
-					".quinconce>div:nth-child(1)"
+					".quinconce>a:nth-child(1)"
 				],
 				attributes: {
 					"data-class": "growLine",
@@ -198,10 +198,10 @@ window.addEventListener("load", ()=>{
 		new CurveSVG(
 			{
 				from: ".depart .barre:nth-child(2)",
-				to: ".quinconce>div:nth-child(2)>div",
+				to: ".quinconce>a:nth-child(2)>div",
 				style: "line",
 				observe: [
-					".quinconce>div:nth-child(2)"
+					".quinconce>a:nth-child(2)"
 				],
 				attributes: {
 					"data-class": "growLine",
@@ -212,10 +212,10 @@ window.addEventListener("load", ()=>{
 		new CurveSVG(
 			{
 				from: ".depart .barre:nth-child(3)",
-				to: ".quinconce>div:nth-child(3)>div",
+				to: ".quinconce>a:nth-child(3)>div",
 				style: "line",
 				observe: [
-					".quinconce>div:nth-child(3)"
+					".quinconce>a:nth-child(3)"
 				],
 				attributes: {
 					"data-class": "growLine",
@@ -226,10 +226,10 @@ window.addEventListener("load", ()=>{
 		new CurveSVG(
 			{
 				from: ".depart .barre:nth-child(4)",
-				to: ".quinconce>div:nth-child(4)>div",
+				to: ".quinconce>a:nth-child(4)>div",
 				style: "line",
 				observe: [
-					".quinconce>div:nth-child(4)"
+					".quinconce>a:nth-child(4)"
 				],
 				attributes: {
 					"data-class": "growLine",

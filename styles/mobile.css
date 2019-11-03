@@ -107,8 +107,10 @@ img{
 .quinconce {
 	text-align: center;
 }
-.quinconce>div {
-	cursor: pointer;
+.quinconce>a {
+	text-decoration: none;
+	color: #424242;
+	display: block;
 	margin: 10px;
 	padding: 20px;
 	border: 1px solid #BBB;
