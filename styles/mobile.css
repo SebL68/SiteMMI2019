@@ -104,6 +104,9 @@ img{
 .depart>span {
 	color: blue;
 }
+.gris{
+	filter: grayscale(1);
+}
 .quinconce {
 	text-align: center;
 }
