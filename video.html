@@ -35,7 +35,7 @@
         window.addEventListener("resize", videoSize)
         function videoSize(){
             document.querySelectorAll("video").forEach(function(e){
-                var width = e.getBoundingClientRect().width;
+                var width = e.offsetWidth;
                 if(width < 427){
                     var size = 240;
                 } else if(width < 854){
@@ -47,8 +47,12 @@
                 }
                
                 if(size != e.dataset.size){
+                    var time = e.currentTime;
                     e.dataset.size = size;
                     e.src = e.dataset.videosrc + size + ".mp4";
+                    e.currentTime = time;
+                    if(e.currentTime != 0)
+                        e.play();
                 }
             })
         }
