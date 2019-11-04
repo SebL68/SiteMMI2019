@@ -90,7 +90,8 @@
 	grid-gap: 20px;
 	-webkit-clip-path: circle(0px at 65% 65%);
 	clip-path: circle(0px at 65% 65%);
-	transition: clip-path 0.6s;
+	transition: clip-path 0.6s, opacity 0.6s;
+	opacity: 0;
 }
 
 .infoContent>div:nth-child(4) {
@@ -118,6 +119,7 @@
 	pointer-events: initial;
 	-webkit-clip-path: circle(100%);
 	clip-path: circle(100%);
+	opacity: 1;
 }
 
 /***********************/
