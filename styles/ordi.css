@@ -103,7 +103,7 @@
 .infoContent>div {
 	border: 1px solid #AAA;
 }
- 
+
 .infoContent>div:not(:last-child) a {
 	margin: 10px auto 10px auto;
 	padding: 25px;
